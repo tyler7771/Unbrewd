@@ -26,7 +26,7 @@ author_id   | integer   | not null, foreign key (references users), indexed
 date        | date      | not null
 rating      | integer   | not null
 
-## rosters
+## roasters
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
