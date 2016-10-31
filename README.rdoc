@@ -1,28 +1,68 @@
-== README
+#Unbrewd
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Heroku link][heroku]
 
-Things you may want to cover:
+[Trello link][trello]
 
-* Ruby version
+[heroku]: https://unbrewd.herokuapp.com/
+[trello]: https://trello.com/b/idvY8Nb8/unbrewd
 
-* System dependencies
+## Minimum Viable Product
 
-* Configuration
+Unbrewd is a web app that was inspired by Untapped.com. It's built using
+Ruby on Rails and React/Redux. At the end of W9D5 it will, at minimum,
+satisify the following criteria with bug-free navigation, adequate seed data
+to demonstrate the features, and sufficient CSS styling.
 
-* Database creation
+- [ ] Hosting on Heroku
+- [ ] New account creation, login, and guest/demo login
+- [ ] Drinks CRUD
+- [ ] Checkins / reviews
+- [ ] Review feed
+- [ ] Profile
+- [ ] Production README
 
-* Database initialization
+## Design Docs
+* [View Wireframes][wireframes]
+* [React Components][components]
+* [API endpoints][api-endpoints]
+* [DB schema][schema]
+* [Sample State][sample-state]
 
-* How to run the test suite
+[wireframes]: docs/wireframes
+[components]: docs/component-hierarchy.md
+[sample-state]: docs/sample-state.md
+[api-endpoints]: docs/api-endpoints.md
+[schema]: docs/schema.md
 
-* Services (job queues, cache servers, search engines, etc.)
+## Timeline
 
-* Deployment instructions
+### Phase 1: Backend setup and Front End User Authentication (2 days)
 
-* ...
+**Objective:** Functioning rails project with front-end Authentication
 
+### Phase 2: Drinks CRUD (2 days)
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+**Objective:** Drinks can be created, read, edited and destroyed through
+the API. Can be viewed on a global feed.
+
+### Phase 3: Checkins / Reviews (2 days)
+
+**Objective:** Drinks can be added to a user's drink list and be reviewed.
+Can be viewed on the user's drink list.
+
+### Phase 4: Profile (2 days)
+
+**Objective:** Users have a profile that features their drink list, a
+profile picture, cover photo, and stats.
+
+### Phase 5: Final CSS (1 day)
+
+**Objective:** Have a complete web app with sufficient CSS styling. Finish
+up any needed CSS styling.
+
+### Bonus Features(TBD)
+- [ ] Friendships
+- [ ] Search
+- [ ] Venues
+- [ ] Badges
