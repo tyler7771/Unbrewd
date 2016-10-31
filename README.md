@@ -1,59 +1,31 @@
 # Unbrewd
 
-[Heroku link](https://unbrewd.herokuapp.com/)
+[Live Site](https://unbrewd.herokuapp.com/)
 
-[Trello link](https://trello.com/b/idvY8Nb8/unbrewd)
+Unbrewd is a full-stack web app based off Untapped.com to research and
+review different coffees that they've tried. It uses Ruby on Rails on the
+backend, PostgreSQL as the database, and React and Redux on the frontend.
 
-## Minimum Viable Product
+## Features & Implementation
 
-Unbrewd is a web app that was inspired by Untapped.com. It's built using
-Ruby on Rails and React/Redux. At the end of W9D5 it will, at minimum,
-satisify the following criteria with bug-free navigation, adequate seed data
-to demonstrate the features, and sufficient CSS styling.
+### Drink Creation and Editing
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] Drinks CRUD
-- [ ] Checkins / reviews
-- [ ] Review feed
-- [ ] Profile
-- [ ] Production README
+Users have the ability to create, read, update, and delete drinks in the
+database. In this form they log the date they tried the coffee, basic info,
+and their rating. It's then added to the global feed and their own coffee
+feed.
 
-## Design Docs
-* [View Wireframes](docs/wireframes)
-* [React Components](docs/component-hierarchy.md)
-* [API endpoints](docs/api-endpoints.md)
-* [DB schema](docs/schema.md)
-* [Sample State](docs/sample-state.md)
+### Review feed
 
-## Timeline
+There are 2 different feeds to check out the different coffees tried. The
+global feed is an updated feed of all coffees tried by all users as coffees
+are reviewed.
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+The user coffee feed is an individuals personal list of coffees tried and
+reviewed that's updated when they review a coffee.
 
-**Objective:** Functioning rails project with front-end Authentication
+### Profile
 
-### Phase 2: Drinks CRUD (2 days)
-
-**Objective:** Drinks can be created, read, edited and destroyed through
-the API. Can be viewed on a global feed.
-
-### Phase 3: Checkins / Reviews (2 days)
-
-**Objective:** Drinks can be added to a user's drink list and be reviewed.
-Can be viewed on the user's drink list.
-
-### Phase 4: Profile (2 days)
-
-**Objective:** Users have a profile that features their drink list, a
-profile picture, cover photo, and stats.
-
-### Phase 5: Final CSS (1 day)
-
-**Objective:** Have a complete web app with sufficient CSS styling. Finish
-up any needed CSS styling.
-
-### Bonus Features(TBD)
-- [ ] Friendships
-- [ ] Search
-- [ ] Venues
-- [ ] Badges
+The user's profile is where they can find their coffee feed. It also includes
+a user's profile photo, cover photo, and coffee stats. The stats includes
+the number of coffees reviewed and individual roasts tried.
