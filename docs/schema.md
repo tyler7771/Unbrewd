@@ -11,11 +11,11 @@ session_token   | string    | not null
 ## coffees
 column name | data type | details
 ------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null
-roaster     | string    | not null
-coffee_shop | string    | not null
-roast_type  | string    | not null
+id             | integer   | not null, primary key
+name           | string    | not null
+roaster_id     | integer   | not null
+coffee_shop_id | integer   | not null
+roast_type     | string    | not null
 
 ## ratings
 column name | data type | details
@@ -25,6 +25,32 @@ coffee_id   | integer   | not null, foreign key (references coffees), indexed
 author_id   | integer   | not null, foreign key (references users), indexed
 date        | date      | not null
 rating      | integer   | not null
+
+## rosters
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+name        | string    | not null
+
+## roasts
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+coffee_id   | integer   | not null, foreign key (references coffees), indexed, unique [tag_id]
+roaster_id  | integer   | not null, foreign key (references roasters), indexed
+
+## coffee_shops
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+name        | string    | not null
+
+## shops_coffees
+column name | data type | details
+------------|-----------|-----------------------
+id             | integer   | not null, primary key
+coffee_id      | integer   | not null, foreign key (references coffees), indexed, unique [tag_id]
+coffee_shop_id | integer   | not null, foreign key (references coffee_shops), indexed
 
 ## tags
 column name | data type | details

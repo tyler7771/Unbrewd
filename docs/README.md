@@ -39,8 +39,8 @@ the API. Can be viewed on a global feed.
 
 ### Phase 3: Checkins / Reviews (2 days)
 
-**Objective:** Drinks can be added to a user's drink list and be reviewed.
-Can be viewed on the user's drink list.
+**Objective:** Drinks can be added to a user's drink list, be reviewed, and tagged.
+Can be viewed on the user's drink list. Can view drinks by tags.
 
 ### Phase 4: Profile (2 days)
 
