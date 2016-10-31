@@ -36,8 +36,9 @@ name        | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-coffee_id   | integer   | not null, foreign key (references coffees), indexed, unique [tag_id]
+coffee_id   | integer   | not null, foreign key (references coffees), indexed
 roaster_id  | integer   | not null, foreign key (references roasters), indexed
+            |           | unique :roaster_id :scope => [:coffee_id]
 
 ## coffee_shops
 column name | data type | details
@@ -49,8 +50,9 @@ name        | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id             | integer   | not null, primary key
-coffee_id      | integer   | not null, foreign key (references coffees), indexed, unique [tag_id]
+coffee_id      | integer   | not null, foreign key (references coffees), indexed
 coffee_shop_id | integer   | not null, foreign key (references coffee_shops), indexed
+               |           | unique :coffee_shop_id :scope => [:coffee_id]
 
 ## tags
 column name | data type | details
@@ -62,5 +64,5 @@ name        | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
+review_id   | integer   | not null, foreign key (references review), indexed, unique [tag_id]
 tag_id      | integer   | not null, foreign key (references tags), indexed
