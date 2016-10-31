@@ -1,11 +1,8 @@
 #Unbrewd
 
-[Heroku link] [heroku]
+[Heroku link][https://unbrewd.herokuapp.com/]
 
-[Trello link] [trello]
-
-[heroku]: https://unbrewd.herokuapp.com/
-[trello]: https://trello.com/b/idvY8Nb8/unbrewd
+[Trello link][https://trello.com/b/idvY8Nb8/unbrewd]
 
 ## Minimum Viable Product
 
