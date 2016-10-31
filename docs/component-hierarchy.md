@@ -1,4 +1,4 @@
-# Api Endpoints
+# Component Heirarchy
 
 **RootPage**
   - Welcome
