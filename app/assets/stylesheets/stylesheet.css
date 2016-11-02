@@ -1,0 +1,102 @@
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  text-decoration: none;
+  color:inherit;
+  margin: auto;
+  box-sizing: inherit;
+  font-size: inherit;
+  min-height: inherit;
+  list-style: none;
+}
+
+body {
+  background-color: #F7F1E0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  height: 60px;
+  background-color: #2C1901;
+  border-bottom: 1px solid black;
+}
+
+.header-image {
+  background-color: white;
+  margin-top: 12px;
+}
+
+.logout {
+  float: right;
+  color: #F7F1E0;
+  size: 20px;
+}
+
+.user-button {
+  margin: 0px 10px 12px;
+  float: right;
+  width: 40px;
+  height: 70px;
+}
+
+.profile-pic {
+  border-radius: 25px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.user-button:hover + .user-dropdown{
+  display: block;
+}
+
+.user-dropdown:hover {
+  display: block;
+}
+
+.search-bar {
+  margin-top: 10px;
+  padding: 7px;
+  float: right;
+  width: 200px;
+  border-radius: 5px;
+  background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-128.png);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: right center;
+  padding-right: 25px;
+}
+
+.header-image:hover {
+  background-color: black;
+}
+
+.header-content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.user-dropdown{
+  position:absolute;
+  top: 61px;
+  left: 515px;
+  width: 200px;
+  display: none;
+  background-color: #4C2A1E;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dropdown-item {
+  padding: 12px;
+  font-size: 15px;
+  color: #F7F1E0;
+  border-top: .5px solid #67432D;
+}
+
+.dropdown-item:hover {
+  background-color: #2C1901;
+}

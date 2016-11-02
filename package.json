@@ -1,17 +1,11 @@
 {
   "name": "Unbrewd",
   "version": "1.0.0",
-  "description": "== README",
-  "main": "index.js",
+  "description": "[Live Site](https://unbrewd.herokuapp.com/)",
+  "main": "webpack.config.js",
   "directories": {
     "doc": "docs"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "babel-core": "^6.18.0",
     "babel-loader": "^6.2.7",
@@ -20,15 +14,14 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
-    "redux": "^3.6.0",
+    "react-router": "^3.0.0",
     "webpack": "^1.13.3"
-  }
-  "engines": {
-    "node": "6.2.1",
-    "npm": "3.9.3"
   },
-
+  "devDependencies": {},
   "scripts": {
-    "postinstall": "./node_modules/.bin/webpack"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
