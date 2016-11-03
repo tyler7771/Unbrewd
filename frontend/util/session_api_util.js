@@ -18,11 +18,11 @@ export const login = (data, success, error) => {
   });
 };
 
-export const logout = (success, error) => {
+export const logout = (success) => {
   $.ajax({
     method: 'DELETE',
     url: 'api/session/',
     success,
-    error
+    error: () => {console.log("error");}
   });
 };

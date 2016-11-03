@@ -1,0 +1,56 @@
+
+.background {
+  background-image: url(http://res.cloudinary.com/dfmvfna21/image/upload/c_scale,h_747/v1478107415/photo-1442975631115-c4f7b05b8a2c_trgehd.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome {
+  background-color: rgba(84, 51, 32, 0.8);;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  border-radius: 5px;
+}
+
+.logo {
+  width: 275px;
+  display: flex;
+  padding: 10px;
+}
+
+.welcome-buttons {
+  display: block;
+  padding: 0;
+}
+
+.welcome-buttons > li {
+  display: flex;
+}
+
+.welcome-text > p {
+  color: white;
+  font-weight: 700;
+  font-size: 23px;
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+}
+
+.welcome-buttons > button {
+  display: block;
+  margin: 5px auto;
+  width: 280px;
+  padding: 5px 0;
+  border-radius: 5px;
+  background-color: #2C1901;
+  color: white;
+  border: none;
+}
