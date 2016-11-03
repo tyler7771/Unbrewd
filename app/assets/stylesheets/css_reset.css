@@ -1,0 +1,26 @@
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  text-decoration: none;
+  color:inherit;
+  margin: auto;
+  box-sizing: inherit;
+  font-size: inherit;
+  min-height: inherit;
+  list-style: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}

@@ -1,20 +1,5 @@
-html, body, header, nav, h1, a,
-ul, li, strong, main, button, i,
-section, img, div, h2, p, form,
-fieldset, label, input, textarea,
-span, article, footer, time, small {
-  text-decoration: none;
-  color:inherit;
-  margin: auto;
-  box-sizing: inherit;
-  font-size: inherit;
-  min-height: inherit;
-  list-style: none;
-}
-
 body {
   background-color: #F7F1E0;
-  font-family: 'Open Sans', sans-serif;
 }
 
 header {
@@ -26,35 +11,6 @@ header {
 .header-image {
   background-color: white;
   margin-top: 12px;
-}
-
-.logout {
-  float: right;
-  color: #F7F1E0;
-  size: 20px;
-}
-
-.user-button {
-  margin: 0px 10px 12px;
-  float: right;
-  width: 40px;
-  height: 70px;
-}
-
-.profile-pic {
-  border-radius: 25px;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  margin-top: 10px;
-}
-
-.user-button:hover + .user-dropdown{
-  display: block;
-}
-
-.user-dropdown:hover {
-  display: block;
 }
 
 .search-bar {
@@ -79,10 +35,28 @@ header {
   margin: 0 auto;
 }
 
+.user-button {
+  margin: 0px 10px 12px;
+  float: right;
+  width: 45px;
+  height: 65px;
+}
+
+.user-button > img {
+  border-radius: 25px;
+  float: right;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.user-button:hover > .user-dropdown{
+  display: block;
+}
+
 .user-dropdown{
   position:absolute;
   top: 61px;
-  left: 515px;
   width: 200px;
   display: none;
   background-color: #4C2A1E;
@@ -90,13 +64,17 @@ header {
   padding: 0;
 }
 
-.dropdown-item {
+.user-dropdown:hover {
+  display: block;
+}
+
+.user-dropdown > li {
   padding: 12px;
   font-size: 15px;
   color: #F7F1E0;
   border-top: .5px solid #67432D;
 }
 
-.dropdown-item:hover {
+.user-dropdown > li:hover {
   background-color: #2C1901;
 }
