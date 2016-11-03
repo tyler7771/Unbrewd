@@ -8,12 +8,16 @@ class SessionForm extends React.Component {
 			username: "",
 			password: ""
 		};
+
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.renderErrors = this.renderErrors.bind(this);
 	}
 
 	componentDidUpdate() {
 		this.redirectIfLoggedIn();
+	}
+
+	componentWillReceiveProps(newProps) {
 	}
 
 	redirectIfLoggedIn() {
@@ -51,7 +55,7 @@ class SessionForm extends React.Component {
 	render() {
 		return (
 			<div className="login-form-container">
-				{this.renderErrors}
+				{this.renderErrors()}
 				<form onSubmit={this.handleSubmit} className="login-form-box">
 					<div className="login-form">
 						<br/>

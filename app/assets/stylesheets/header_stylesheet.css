@@ -8,9 +8,13 @@ header {
   border-bottom: 1px solid black;
 }
 
+.nav-links {
+
+}
+
 .header-image {
   background-color: white;
-  margin-top: 12px;
+  align-self: center;
 }
 
 .search-bar {
@@ -33,6 +37,8 @@ header {
 .header-content {
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .user-button {
