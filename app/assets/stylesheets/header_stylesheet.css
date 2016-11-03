@@ -8,17 +8,40 @@ header {
   border-bottom: 1px solid black;
 }
 
-.nav-links {
+.header-content {
+  width: 97%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
 
+.header-containers {
+  display: flex;
+  align-content: center;
+}
+
+.nav-links {
+  padding: 0;
+  margin: 0 10px;
+  align-self: center;
+}
+
+.nav-links > li {
+  color: #F7F1E0;
+  display: inline;
+  margin: 0 10px;
+  font-size: 18px;
 }
 
 .header-image {
   background-color: white;
-  align-self: center;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 .search-bar {
-  margin-top: 10px;
   padding: 7px;
   float: right;
   width: 200px;
@@ -28,32 +51,25 @@ header {
   background-size: 25px;
   background-position: right center;
   padding-right: 25px;
+  align-self: center;
 }
 
 .header-image:hover {
   background-color: black;
 }
 
-.header-content {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-}
-
 .user-button {
-  margin: 0px 10px 12px;
-  float: right;
   width: 45px;
-  height: 65px;
+  height: 61px;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 7px;
 }
 
 .user-button > img {
   border-radius: 25px;
-  float: right;
   width: 40px;
   height: 40px;
-  margin-top: 10px;
 }
 
 .user-button:hover > .user-dropdown{

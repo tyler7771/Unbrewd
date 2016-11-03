@@ -24,7 +24,7 @@
 .logo {
   width: 275px;
   display: flex;
-  padding: 10px;
+  padding: 10px 10px 0;
 }
 
 .welcome-buttons {
@@ -62,7 +62,7 @@ button {
 
 .login-form > input:not(:last-child) {
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 10px;
   padding: 0;
   border: 0;
   outline: 0;
@@ -105,4 +105,16 @@ button {
 
 .form-redirect > p > a {
   text-decoration: underline;
+}
+
+.welcome-errors > li {
+  font-size: 15px;
+  text-align: center;
+  font-weight: 700;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.welcome-errors {
+  padding: 5px;
 }

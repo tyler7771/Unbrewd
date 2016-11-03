@@ -5,7 +5,7 @@ fieldset, label, input, textarea,
 span, article, footer, time, small {
   text-decoration: none;
   color:inherit;
-  margin: auto;
+  margin: 0;
   box-sizing: inherit;
   font-size: inherit;
   min-height: inherit;
