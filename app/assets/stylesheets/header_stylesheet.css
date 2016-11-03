@@ -9,6 +9,7 @@ header {
 }
 
 .header-content {
+  max-width: 1048px;
   width: 97%;
   margin: 0 auto;
   display: flex;
