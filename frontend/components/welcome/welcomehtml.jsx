@@ -1,6 +1,6 @@
 import React from 'react';
 import { hashHistory, withRouter, Link } from 'react-router';
-import SessionForm from '../sessionForm/session_form';
+import SessionForm from '../sessionForm/session_form_container';
 
 class Welcome extends React.Component {
   constructor(props) {
