@@ -3,12 +3,9 @@ import SessionForm from './session_form';
 import { login, signup } from '../../actions/session_actions';
 
 
-const mapStateToProps = (state, ownProps) => {
-  debugger
-  return {
+const mapStateToProps = (state, ownProps) => ({
     errors: state.session.errors
-  };
-};
+});
 
 const mapDispatchToProps = (dispatch, formType) => {
   const processForm = (formType === 'Log in') ? login : signup;

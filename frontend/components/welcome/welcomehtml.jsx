@@ -32,10 +32,16 @@ class Welcome extends React.Component {
   formShowing() {
     if (this.state.type === "button") {
       return (
-        <div className="welcome-buttons">
-          <button onClick={ (e) => this.handleButton(e, "login") }>Login</button>
-          <button onClick={ (e) => this.handleButton(e, "signup") }>Signup</button>
-          <button onClick={ (e) => this.handleButton(e, "guest") }>Sign in as Guest</button>
+        <div>
+          <div className="welcome-text">
+            <p>DISCOVER AND SHARE</p>
+            <p>YOUR FAVORITE COFFEES</p>
+          </div>
+          <div className="welcome-buttons">
+            <button onClick={ (e) => this.handleButton(e, "login") }>Login</button>
+            <button onClick={ (e) => this.handleButton(e, "signup") }>Signup</button>
+            <button onClick={ (e) => this.handleButton(e, "guest") }>Sign in as Guest</button>
+          </div>
         </div>
       );
     } else if (this.state.type === "signup") {
@@ -80,10 +86,6 @@ class Welcome extends React.Component {
       <div className="background">
         <div className="welcome">
           <img className="logo" src="http://res.cloudinary.com/dfmvfna21/image/upload/v1478119908/Coffee_Decorative_Text_PNG_Vector_Clipart_1_wf6ey5.png" />
-          <div className="welcome-text">
-            <p>DISCOVER AND SHARE</p>
-            <p>YOUR FAVORITE COFFEES</p>
-          </div>
           {this.formShowing()}
         </div>
       </div>

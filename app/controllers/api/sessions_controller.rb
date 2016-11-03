@@ -5,11 +5,13 @@ class Api::SessionsController < ApplicationController
       params[:user][:password]
     )
 
-    if @user
+    if @user == "password"
+      render :json => { :errors => ["Password incorrect"] }, :status => 401
+    elsif @user.nil?
+      render :json => { :errors => ["Username not found"] }, :status => 404
+    else
       sign_in(@user)
       render './api/users/show'
-    else
-      render :json => { :errors => ["Username and password incorrect"] }, :status => 401
     end
   end
 
