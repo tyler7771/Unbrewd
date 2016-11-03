@@ -34,22 +34,6 @@ class SessionForm extends React.Component {
 		this.props.action({user});
 	}
 
-	navLink() {
-		if (this.props.formType === "login") {
-			return (
-				<div>
-					Not a user? <Link to="/signup">Sign up!</Link>
-				</div>
-			);
-		} else {
-			return (
-				<div>
-					Already a member? <Link to="/login">Log in!</Link>
-				</div>
-			);
-		}
-	}
-
 	renderErrors() {
 		if (this.props.errors) {
 			return(
@@ -67,26 +51,25 @@ class SessionForm extends React.Component {
 	render() {
 		return (
 			<div className="login-form-container">
-				{this.renderErrors()}
+				{this.renderErrors}
 				<form onSubmit={this.handleSubmit} className="login-form-box">
 					<div className="login-form">
 						<br/>
-						<label> Username:
 							<input type="text"
+								className="login-field"
+								placeholder="username"
 								value={this.state.username}
 								onChange={this.update("username")}
 								className="login-input" />
-						</label>
 						<br/>
-						<label> Password:
 							<input type="password"
+								className="login-field"
+								placeholder="password"
 								value={this.state.password}
 								onChange={this.update("password")}
 								className="login-input" />
-						</label>
 						<br/>
-						<input type="submit" value="Submit" />
-						{this.navLink()}
+						<input type="submit" value={this.props.formType} />
 					</div>
 				</form>
 			</div>

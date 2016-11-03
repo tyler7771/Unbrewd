@@ -25,7 +25,7 @@ class Welcome extends React.Component {
   handleLogin(e) {
     e.preventDefault();
     return (
-      <SessionForm formType = "login" action={this.props.login}/>
+      <SessionForm formType = "Log in" action={this.props.login}/>
     );
   }
 
@@ -39,9 +39,28 @@ class Welcome extends React.Component {
         </div>
       );
     } else if (this.state.type === "signup") {
-      this.setState({type: "signup"});
+      return (
+        <div className="auth-form">
+          <SessionForm formType = "Sign up" action={this.props.signup}/>
+          <span className="form-redirect">
+            <p>Already a member?
+              <a onClick={ (e) => this.handleButton(e, "login") }> Log in!</a>
+            </p>
+          </span>
+        </div>
+      );
     } else {
-      this.setState({type: "login"});
+      return (
+        <div className="auth-form">
+          <SessionForm formType = "Log in" action={this.props.login}/>
+          <button onClick={ (e) => this.handleButton(e, "guest") }>Sign in as Guest</button>
+          <span className="form-redirect">
+            <p>Not a member?
+              <a onClick={ (e) => this.handleButton(e, "signup") }> Sign up!</a>
+            </p>
+          </span>
+        </div>
+      );
     }
   }
 
@@ -50,13 +69,9 @@ class Welcome extends React.Component {
     if (type === "guest") {
       this.props.login({user: {username: "guest", password: "password"}});
     } else if (type === "signup") {
-      return (
-        <SessionForm formType = "signup" action={this.props.signup}/>
-      );
+      this.setState({type: "signup"});
     } else {
-      return (
-        <SessionForm formType = "login" action={this.props.login}/>
-      );
+      this.setState({type: "login"});
     }
   }
 

@@ -15,8 +15,7 @@ const Header = ({currentUser, logout}) => {
             <li><Link to="/">Recent Activity</Link></li>
             <li><Link to="/">Profile</Link></li>
             <li><Link to="/">Coffee History</Link></li>
-            <li><Link to="/">Coffee History</Link></li>
-            <li><Link onClick={logout}>Logout</Link></li>
+            <li onClick={logout}>Logout</li>
           </ul>
         </div>
       </div>

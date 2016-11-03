@@ -44,13 +44,65 @@
   text-shadow: 1px 1px 2px black;
 }
 
-.welcome-buttons > button {
+button {
   display: block;
-  margin: 5px auto;
+  margin: 8px auto;
   width: 280px;
+  height: 35px;
   padding: 5px 0;
   border-radius: 5px;
   background-color: #2C1901;
   color: white;
   border: none;
+  font-weight: 600;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px black;
+  border: 1px solid #67432D;
+}
+
+.login-form > input:not(:last-child) {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  width: 280px;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 700;
+  color: white;
+  border-bottom: 4px solid white;
+}
+
+.login-form > input:focus {
+  color: white;
+  border-color: black;
+}
+
+.login-form > input[type="submit"] {
+  display: block;
+  margin: 8px auto;
+  width: 280px;
+  height: 35px;
+  padding: 5px 0;
+  border-radius: 5px;
+  background-color: #2C1901;
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px black;
+  border: 1px solid #67432D;
+}
+
+.form-redirect > p {
+  text-align: center;
+  color: white;
+  padding-bottom: 10px;
+  font-size: 17px;
+}
+
+.form-redirect > p > a {
+  text-decoration: underline;
 }
