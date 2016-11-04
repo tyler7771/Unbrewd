@@ -17,7 +17,7 @@ const Header = ({currentUser, logout}) => {
         </div>
         <div className="header-containers">
         <div className="user-button">
-          <img src="http://res.cloudinary.com/dfmvfna21/image/upload/v1478198648/249903173ee16b3346ba320a24e56a8b_quwrxc.jpg" />
+          <img src={currentUser.picture_url} />
           <ul className="user-dropdown">
             <li><Link to="/">Recent Activity</Link></li>
             <li><Link to="/">Profile</Link></li>
