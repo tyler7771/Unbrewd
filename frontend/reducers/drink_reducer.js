@@ -8,7 +8,7 @@ const DrinksReducer = (oldState = {}, action) => {
     case RECEIVE_ALL_DRINKS:
       return merge({}, action.drinks);
     case RECEIVE_DRINK:
-      return merge({}, oldState, {[action.drink.id]: action.drink});
+      return merge({}, oldState, action.drink);
     case REMOVE_DRINK:
       let newState = merge({}, oldState);
       delete newState[action.drink.id];

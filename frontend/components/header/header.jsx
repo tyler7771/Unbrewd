@@ -13,6 +13,7 @@ const Header = ({currentUser, logout}) => {
           <li><Link to="/">The Roast</Link></li>
           <li><Link to="/">Top Rated</Link></li>
           <li><Link to="/">Rate a Coffee</Link></li>
+          <li><Link to="/coffee">All Coffees</Link></li>
         </ul>
         </div>
         <div className="header-containers">

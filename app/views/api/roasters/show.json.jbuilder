@@ -1,1 +1,1 @@
-json.extract! @roaster, :id, :name
+json.extract! @roaster, :id, :name, :picture_url

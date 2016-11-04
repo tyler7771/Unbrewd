@@ -20,6 +20,6 @@ class Api::RoastersController < ApplicationController
 
   private
   def roaster_params
-    params.require(:roaster).permit(:name)
+    params.require(:roaster).permit(:name, :picture_url)
   end
 end
