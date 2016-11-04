@@ -6,7 +6,6 @@ import HeaderContainer from './header/headercontainer';
 const App = ({ children }) => (
   <div>
     <HeaderContainer />
-    <DrinkIndexContainer />
     {children}
   </div>
 );

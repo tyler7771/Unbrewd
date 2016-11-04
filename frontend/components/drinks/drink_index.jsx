@@ -4,13 +4,12 @@ import DrinkForm from './drink_form';
 
 class DrinkIndex extends React.Component {
   componentDidMount() {
-    debugger
     this.props.fetchDrinks();
   }
 
   render () {
     return (
-      <div>
+      <div className="drink-index">
         <ul>
           {
             this.props.drinks.map(drink => (

@@ -2,14 +2,23 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 
 const DrinkIndexItem = ({ drink, router }) => (
-  <li className="drink-index-item">
-    <Link to={`/drinks/${drink.id}`}>
-      <h2 className="drink-index-title">{drink.name}</h2>
-      <h3 className="drink-index-roaster">{drink.roaster.name}</h3>
-      <h3 className="drink-index-roast-type">{drink.roast_type}</h3>
-      <img className="drink-index-image" src={drink.picture_url} />
-    </Link>
-  </li>
+  <Link to={`/coffee/${drink.id}`}>
+    <li className="drink-index-item">
+      <div className="drink-index-text">
+        <h2 className="drink-index-title">{drink.name}</h2>
+        <p className="drink-index-roaster">
+          <span>Roaster: </span>{drink.roaster.name}
+        </p>
+        <p className="drink-index-roast-type">
+          <span>Roast Type: </span>{drink.roast_type}
+        </p>
+        <p className="drink-index-description">
+          <span>Description: </span>{drink.description}
+        </p>
+      </div>
+      <img className="drink-index-image" src={drink.roaster.picture_url} />
+  </  li>
+</Link>
 );
 
 export default DrinkIndexItem;

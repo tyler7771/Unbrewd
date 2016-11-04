@@ -11,26 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103221310) do
+ActiveRecord::Schema.define(version: 20161104170543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "drinks", force: :cascade do |t|
-    t.string   "name",                                                                                                                     null: false
-    t.integer  "roaster_id",                                                                                                               null: false
-    t.string   "roast_type",                                                                                                               null: false
-    t.datetime "created_at",                                                                                                               null: false
-    t.datetime "updated_at",                                                                                                               null: false
-    t.string   "picture_url", default: "http://res.cloudinary.com/dfmvfna21/image/upload/v1478211374/coffee-cup-working-happy_gsogqz.jpg"
+    t.string   "name",        null: false
+    t.integer  "roaster_id",  null: false
+    t.string   "roast_type",  null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
   end
 
   add_index "drinks", ["name"], name: "index_drinks_on_name", using: :btree
 
   create_table "roasters", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                                                                                                                                   null: false
+    t.datetime "created_at",                                                                                                                             null: false
+    t.datetime "updated_at",                                                                                                                             null: false
+    t.string   "picture_url", default: "http://res.cloudinary.com/dfmvfna21/image/upload/c_scale,h_500/v1478211374/coffee-cup-working-happy_gsogqz.jpg"
   end
 
   add_index "roasters", ["name"], name: "index_roasters_on_name", unique: true, using: :btree
