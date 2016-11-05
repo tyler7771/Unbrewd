@@ -58,6 +58,11 @@ button {
   font-size: 18px;
   text-shadow: 1px 1px 2px black;
   border: 1px solid #67432D;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4C2A1E;
 }
 
 .login-form > input:not(:last-child) {
@@ -94,6 +99,11 @@ button {
   font-size: 18px;
   text-shadow: 1px 1px 2px black;
   border: 1px solid #67432D;
+  cursor: pointer;
+}
+
+.login-form > input[type="submit"]:hover {
+  background-color: #4C2A1E;
 }
 
 .form-redirect > p {
@@ -105,6 +115,7 @@ button {
 
 .form-redirect > p > a {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .welcome-errors > li {
