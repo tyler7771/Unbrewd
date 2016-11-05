@@ -49,8 +49,8 @@ class Welcome extends React.Component {
         <div className="auth-form">
           <SessionForm formType = "Sign up" action={this.props.signup}/>
           <span className="form-redirect">
-            <p>Already a member?
-              <a onClick={ (e) => this.handleButton(e, "login") }> Log in!</a>
+            <p>Already a member? &nbsp;
+              <a onClick={ (e) => this.handleButton(e, "login") }>Log in!</a>
             </p>
           </span>
         </div>
@@ -61,8 +61,8 @@ class Welcome extends React.Component {
           <SessionForm formType = "Log in" action={this.props.login}/>
           <button onClick={ (e) => this.handleButton(e, "guest") }>Sign in as Guest</button>
           <span className="form-redirect">
-            <p>Not a member?
-              <a onClick={ (e) => this.handleButton(e, "signup") }> Sign up!</a>
+            <p>Not a member? &nbsp;
+              <a onClick={ (e) => this.handleButton(e, "signup") }>Sign up!</a>
             </p>
           </span>
         </div>

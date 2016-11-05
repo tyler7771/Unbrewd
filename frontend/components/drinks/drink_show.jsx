@@ -66,7 +66,7 @@ class DrinkShow extends React.Component {
                   <label className="bean-5" htmlFor="bean-5">5</label>
                   <span></span>
               </div>
-          </form>
+            </form>
           </div>
 
           <p className="drink-show-description">
