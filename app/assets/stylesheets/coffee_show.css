@@ -1,0 +1,194 @@
+.drink-show {
+  max-width: 1048px;
+  width: 97%;
+  margin: 0 auto;
+}
+
+.drink-show > ul {
+  padding: 0;
+}
+
+.drink-show-item {
+  background-color: white;
+  width: 60%;
+  margin-top: 20px;
+  padding: 20px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+   -moz-box-shadow: 0 10px 6px -6px #777;
+        box-shadow: 0 10px 6px -6px #777;
+}
+.snapshot {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #E4E4E4;
+}
+
+.drink-show-snapshot {
+  width: 40%;
+}
+
+.drink-show-title {
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.drink-show-roaster {
+  font-size: 20px;
+  color: #67432D;
+}
+
+.drink-show-roaster:hover {
+  color: #ff9933;
+  cursor: pointer;
+}
+
+.drink-show-text{
+  width: 70%;
+}
+
+.drink-show-text > p > span {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.drink-show-text > h2 {
+  font-size: 25px;
+  font-weight: 800;
+  color: #4C2A1E;
+  border-bottom: 1px solid #F7F1E0;
+}
+
+.drink-show-text > p {
+  margin: 5px 0;
+}
+
+.drink-show-image {
+  width: 15%;
+  height: 25%;
+  float: right;
+}
+
+.drink-statistics {
+  width: 40%;
+  height: 25%;
+  border-collapse: collapse;
+  margin-left: 15px;
+}
+
+th {
+  padding-left: 6px;
+  width: 50%;
+  text-align: left;
+}
+
+.stat-title {
+  color: #878787;
+  font-weight: lighter;
+  font-size: 10px;
+}
+
+.stat-number {
+  color: #878787;
+  font-weight: lighter;
+  font-size: 25px;
+  -webkit-margin-before: -5px;
+}
+
+.user-stat-number {
+  color: #67432D;
+  font-weight: 600;
+  font-size: 25px;
+  -webkit-margin-before: -6px;
+  -webkit-margin-after: -5px;
+}
+
+.user-stat-number:hover {
+  color: #ff9933;
+  cursor: pointer;
+}
+
+.table-tl {
+  border-right: 1px solid #E4E4E4;
+  border-bottom: 1px solid #E4E4E4;
+}
+
+.table-tr {
+  border-bottom: 1px solid #E4E4E4;
+}
+
+.table-bl {
+  border-right: 1px solid #E4E4E4;
+}
+
+form .beans {
+  background: url("http://res.cloudinary.com/dfmvfna21/image/upload/v1478303861/bean-sprite_lvuxjl.png") repeat-x 0 0;
+  width: 150px;
+  margin: 0 auto;
+}
+
+form .beans input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+form .beans input[type="radio"].bean-5:checked ~ span {
+  width: 100%;
+}
+form .beans input[type="radio"].bean-4:checked ~ span {
+  width: 80%;
+}
+form .beans input[type="radio"].bean-3:checked ~ span {
+  width: 60%;
+}
+form .beans input[type="radio"].bean-2:checked ~ span {
+  width: 40%;
+}
+form .beans input[type="radio"].bean-1:checked ~ span {
+  width: 20%;
+}
+form .beans label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0!important;
+  padding: 0!important;
+  text-indent: -999em;
+  float: left;
+  position: relative;
+  z-index: 10;
+  background: transparent!important;
+  cursor: pointer;
+}
+form .beans label:hover ~ span {
+  background-position: 0 -40px;
+}
+form .beans label.bean-5:hover ~ span {
+  width: 100% !important;
+}
+form .beans label.bean-4:hover ~ span {
+  width: 80% !important;
+}
+form .beans label.bean-3:hover ~ span {
+  width: 60% !important;
+}
+form .beans label.bean-2:hover ~ span {
+  width: 40% !important;
+}
+form .beans label.bean-1:hover ~ span {
+  width: 20% !important;
+}
+form .beans span {
+  display: block;
+  width: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 30px;
+  background: url("http://res.cloudinary.com/dfmvfna21/image/upload/v1478303861/bean-sprite_lvuxjl.png") repeat-x 0 -40px;
+  -webkit-transition: -webkit-width 0.5s;
+  -moz-transition: -moz-width 0.5s;
+  -ms-transition: -ms-width 0.5s;
+  -o-transition: -o-width 0.5s;
+  transition: width 0.5s;
+}
