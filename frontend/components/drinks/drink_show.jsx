@@ -48,7 +48,7 @@ class DrinkShow extends React.Component {
             </table>
           </div>
 
-          <div className="drink-show-information">
+          <div className="drink-details">
             <p className="drink-show-roast-type">
               <span>Roast Type: </span>{drink.roast_type}
             </p>
@@ -67,11 +67,15 @@ class DrinkShow extends React.Component {
                   <span></span>
               </div>
             </form>
+            <p>
+              0<span> Ratings</span>
+            </p>
           </div>
 
-          <p className="drink-show-description">
-            <span>Description: </span>{drink.description}
-          </p>
+          <div className="drink-description">
+            <p><span>Description: </span>{drink.description}</p>
+            
+          </div>
         </div>
       </div>
     );
