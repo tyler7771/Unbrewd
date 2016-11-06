@@ -75,9 +75,17 @@ class Welcome extends React.Component {
     if (type === "guest") {
       this.props.login({user: {username: "guest", password: "password"}});
     } else if (type === "signup") {
-      this.setState({type: "signup"});
+      if (!this.props.currentUser) {
+        this.setState({type: "signup"});
+      } else {
+        hashHistory.push("/");
+      }
     } else {
-      this.setState({type: "login"});
+      if (!this.props.currentUser) {
+        this.setState({type: "login"});
+      } else {
+        hashHistory.push("/");
+      }
     }
   }
 

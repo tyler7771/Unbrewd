@@ -21,7 +21,6 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
-  border-bottom: 1px solid #E4E4E4;
 }
 
 .drink-show-snapshot {
@@ -191,4 +190,25 @@ form .beans span {
   -ms-transition: -ms-width 0.5s;
   -o-transition: -o-width 0.5s;
   transition: width 0.5s;
+}
+
+.drink-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 40px;
+  border: 1px solid #E4E4E4;
+}
+
+.drink-details > p {
+  font-size: 17px;
+  color: #878787;
+}
+
+.drink-description {
+  padding-top: 10px;
+}
+.drink-description > p {
+  font-size: 17px;
+  color: #878787;
 }
