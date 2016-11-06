@@ -1,9 +1,9 @@
 import {
   receiveRoaster,
   receiveAllRoasters,
-  FETCH_DRINKS,
-  FETCH_DRINK,
-  CREATE_DRINK,
+  FETCH_ROASTERS,
+  FETCH_ROASTER,
+  CREATE_ROASTER,
 } from '../actions/roaster_actions';
 
 import {
@@ -19,11 +19,11 @@ const RoastersMiddleware = ({ getState, dispatch }) => next => action => {
   let fetchRoasterSuccess = roaster => dispatch(receiveRoaster(roaster));
 
   switch (action.type) {
-    case FETCH_DRINKS:
+    case FETCH_ROASTERS:
       fetchRoasters(fetchAllRoastersSuccess);
-    case FETCH_DRINK:
+    case FETCH_ROASTER:
       fetchRoaster(action.id, fetchRoasterSuccess);
-    case CREATE_DRINK:
+    case CREATE_ROASTER:
       createRoaster(action.roaster, fetchRoasterSuccess);
     default:
       next(action);

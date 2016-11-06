@@ -1,9 +1,8 @@
 export const createDrink = (drink, success, error) => {
-  debugger
   $.ajax({
     method: 'POST',
     url: 'api/drinks/',
-    data: {drink},
+    data: drink,
     success,
     error
   });

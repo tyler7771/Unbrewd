@@ -11,7 +11,7 @@ export const createRoaster = (roaster, success, error) => {
 export const fetchRoasters = success => {
   $.ajax({
     method: "GET",
-    url: "api/roasters",
+    url: "api/roasters/",
     success
   });
 };
