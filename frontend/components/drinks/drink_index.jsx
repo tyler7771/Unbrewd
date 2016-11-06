@@ -24,12 +24,12 @@ class DrinkIndex extends React.Component {
   }
 
   render () {
-    let drinkIndex = this.sortedItems();
+    // let drinkIndex = this.sortedItems();
     return (
       <div className="drink-index">
         <ul>
           {
-            drinkIndex.map(drink => (
+            this.props.drinks.map(drink => (
               <DrinkIndexItem
                 key={drink.id}
                 deleteDrink={this.props.deleteDrink}
