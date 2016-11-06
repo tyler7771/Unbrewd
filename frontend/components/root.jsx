@@ -5,6 +5,7 @@ import App from './app';
 import Welcome from './welcome';
 import DrinkIndexContainer from './drinks/drink_index_container';
 import DrinkShowContainer from './drinks/drink_show_container';
+import DrinkFormContainer from './drinks/drink_form_container';
 
 const Root = ({ store }) => {
 
@@ -26,6 +27,7 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App} onEnter={_ensureLoggedIn}>
+          <Route path="/new" component={DrinkFormContainer} />
           <Route path="/coffee" component={DrinkIndexContainer} />
           <Route path="/coffee/:drinkId" component={DrinkShowContainer} />
         </Route>

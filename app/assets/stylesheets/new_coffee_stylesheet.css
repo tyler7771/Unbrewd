@@ -1,0 +1,105 @@
+.drink-form-page {
+  height: 95%;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drink-form-box {
+  background-color: rgba(84, 51, 32, 0.8);;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 5px;
+  flex-direction: column;
+}
+
+.drink-form-box > h1 {
+  font-size: 45px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.select-style {
+  padding: 0;
+  margin: 8px auto;
+  border: 1px solid #ccc;
+  width: 280px;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #fff;
+  background: #fff;
+  position: relative;
+}
+
+.select-style:after {
+  top: 50%;
+  left: 95%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-top-color: #000000;
+  border-width: 5px;
+  margin-top: -2px;
+  z-index: 100;
+}
+
+.select-style select {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px 8px;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+.coffee-create-name {
+  display: block;
+  margin: 0 auto;
+  width: 273px;
+  height: 25px;
+  border-radius: 5px;
+  padding-left: 7px;
+}
+
+.coffee-create-description {
+  display: block;
+  margin: 0 auto;
+  height: 60px;
+  width: 266px;
+  padding: 7px;
+}
+
+.drink-form > input[type="submit"] {
+  display: block;
+  margin: 8px auto;
+  width: 280px;
+  height: 35px;
+  padding: 5px 0;
+  border-radius: 5px;
+  background-color: #2C1901;
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px black;
+  border: 1px solid #67432D;
+  cursor: pointer;
+}

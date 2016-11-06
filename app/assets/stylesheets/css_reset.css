@@ -13,14 +13,6 @@ span, article, footer, time, small {
   font-family: 'Open Sans', sans-serif;
 }
 
-body {
-  height: 100%;
-}
-
-main {
-  height: 100%;
-}
-
-html {
+body, main, html {
   height: 100%;
 }

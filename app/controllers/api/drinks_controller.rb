@@ -15,6 +15,7 @@ class Api::DrinksController < ApplicationController
     if @drink.save
       render :show
     else
+      debugger
       render :json => { :errors => @drink.errors.full_messages }, :status => 422
     end
   end
