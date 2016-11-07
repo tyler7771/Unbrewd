@@ -9,6 +9,7 @@
 User.create(id: 1, username: "guest", password: "password")
 User.create(id: 2, username: "tyler", password: "password", picture_url: "http://res.cloudinary.com/dfmvfna21/image/upload/v1478046196/Fields2_xkwxzq.jpg")
 
+Roaster.create(id: 100, name: "None Given")
 Roaster.create(id: 1, name: "Safe Camp Coffee", picture_url: "http://res.cloudinary.com/dfmvfna21/image/upload/v1478278838/1qfPJuBe_iye7wm.jpg")
 Roaster.create(id: 2, name: "James Coffee Co.", picture_url: "http://res.cloudinary.com/dfmvfna21/image/upload/v1478282408/5061261_300x300_szcbi4.jpg")
 Roaster.create(id: 3, name: "Starbucks", picture_url: "http://res.cloudinary.com/dfmvfna21/image/upload/v1478284914/starbuckslogo_gmrnyn.png")

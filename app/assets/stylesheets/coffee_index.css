@@ -4,6 +4,44 @@
   margin: 0 auto;
 }
 
+.finding-drinks {
+  background-color: white;
+  width: 65%;
+  margin: 15px 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
+}
+
+.finding-drinks > h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.finding-drinks > h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.finding-drinks > span {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.finding-drinks > span > a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.finding-drinks > .select-style {
+  margin: 0;
+}
+
 .drink-index > ul {
   padding: 0;
 }

@@ -6,7 +6,8 @@ import {
   FETCH_DRINK,
   CREATE_DRINK,
   UPDATE_DRINK,
-  DELETE_DRINK
+  DELETE_DRINK,
+  receiveErrors
 } from '../actions/drink_actions';
 
 import {
@@ -19,10 +20,17 @@ import {
 import { hashHistory } from 'react-router';
 
 const DrinksMiddleware = ({ getState, dispatch }) => next => action => {
-  let error = e => console.log(e.responseJSON);
+  const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
   let fetchAllDrinksSuccess = drinks => dispatch(receiveAllDrinks(drinks));
   let fetchDrinkSuccess = drink => dispatch(receiveDrink(drink));
-  let removeDrinkSuccess = id => dispatch(removeDrink(id));
+  let createDrinkSuccess = drink => {
+    dispatch(receiveDrink(drink));
+    hashHistory.push(`/coffee/${Object.keys(drink)[0]}`);
+  };
+  let removeDrinkSuccess = id => {
+    hashHistory.push("/coffee");
+    dispatch(removeDrink(id));
+  };
 
   switch (action.type) {
     case FETCH_DRINKS:
@@ -32,7 +40,7 @@ const DrinksMiddleware = ({ getState, dispatch }) => next => action => {
       fetchDrink(action.id, fetchDrinkSuccess);
       return next(action);
     case CREATE_DRINK:
-      createDrink(action.drink, fetchDrinkSuccess);
+      createDrink(action.drink, createDrinkSuccess, errorCallback);
       return next(action);
     case UPDATE_DRINK:
       updateDrink(action.drink, fetchDrinkSuccess);
