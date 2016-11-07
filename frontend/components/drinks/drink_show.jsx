@@ -2,8 +2,19 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class DrinkShow extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchDrink(this.props.params.drinkId);
+  }
+
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteDrink(this.props.params.drinkId);
   }
 
   render () {
@@ -74,7 +85,12 @@ class DrinkShow extends React.Component {
 
           <div className="drink-description">
             <p><span>Description: </span>{drink.description}</p>
-            
+
+            <div className="drink-crud-buttons">
+              <a href={`/#/update/${drink.id}`}><button>Update</button></a>
+              <a><button onClick={this.handleDelete}>Delete</button></a>
+              <a><button>Check-In</button></a>
+            </div>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@
 .drink-index-item {
   background-color: white;
   width: 65%;
-  margin-top: 20px;
+  margin: 15px 0;
   padding: 20px;
   display: flex;
   justify-content: space-between;

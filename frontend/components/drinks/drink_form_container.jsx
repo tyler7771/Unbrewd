@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch, { location }) => {
   const formType = location.pathname.slice(1);
-  const processForm = (formType === 'new/') ? createDrink : updateDrink;
+  const processForm = (formType === 'new') ? createDrink : updateDrink;
 
   return {
     processForm: user => dispatch(processForm(user)),

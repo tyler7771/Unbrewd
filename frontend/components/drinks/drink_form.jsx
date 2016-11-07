@@ -48,7 +48,7 @@ class DrinkForm extends React.Component {
 
 
   render () {
-    const formType = (this.props.formType === 'new/') ? 'New Drink' : 'Update Drink';
+    const formType = (this.props.formType === 'new') ? 'New Drink' : 'Update Drink';
     return (
       <div className="drink-form-page">
         <div className="drink-form-box">
@@ -63,7 +63,9 @@ class DrinkForm extends React.Component {
               <option>Roaster</option>
               {
                 this.props.roasters.map(roaster => (
-                  <option key={roaster.id} value={roaster.id}>{roaster.name}</option>
+                  <option key={roaster.id}
+                    value={roaster.id}>{roaster.name}
+                  </option>
                 ))
               }
             </select>

@@ -28,7 +28,7 @@ class DrinkIndex extends React.Component {
     return (
       <div className="drink-index">
         <h1>All Our Coffees!</h1>
-        <span>Don't see your favorite coffee?</span> <a href="/#/new/">Add it to our list!</a>
+        <span>Don't see your favorite coffee?</span> <a href="/#/new">Add it to our list!</a>
         <ul>
           {
             this.props.drinks.map(drink => (
