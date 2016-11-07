@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import DrinkShow from './drink_show';
-import { fetchDrink } from '../../actions/drink_actions';
+import { fetchDrink, deleteDrink } from '../../actions/drink_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   drink: state.drink[ownProps.params.drinkId]
@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchDrink: id => dispatch(fetchDrink(id)),
+  deleteDrink: id => dispatch(deleteDrink(id))
 });
 
 export default connect(

@@ -28,6 +28,7 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path="/" component={App} onEnter={_ensureLoggedIn}>
           <Route path="/new" component={DrinkFormContainer} />
+          <Route path="/update/:drinkid" component={DrinkFormContainer} />
           <Route path="/coffee" component={DrinkIndexContainer} />
           <Route path="/coffee/:drinkId" component={DrinkShowContainer} />
         </Route>
