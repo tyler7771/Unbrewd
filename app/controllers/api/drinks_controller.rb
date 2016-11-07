@@ -15,7 +15,6 @@ class Api::DrinksController < ApplicationController
     if @drink.save
       render :show
     else
-      debugger
       render :json => { :errors => @drink.errors.full_messages }, :status => 422
     end
   end
@@ -33,7 +32,7 @@ class Api::DrinksController < ApplicationController
   def destroy
     @drink = Drink.find(params[:id])
     @drink.destroy
-    render :index
+    render :json => {}
   end
 
   private

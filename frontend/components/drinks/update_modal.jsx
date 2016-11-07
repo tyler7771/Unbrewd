@@ -1,18 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router';
 
-class DrinkForm extends React.Component {
+class UpdateModal extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      name: "",
-      roaster_id: 100,
-      roast_type: "",
-      description: ""
+      id: this.props.drink.id,
+      name: this.props.drink.name,
+      roaster_id: this.props.drink.roaster.id,
+      roast_type: this.props.drink.roast_type,
+      description: this.props.drink.description
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
@@ -23,7 +23,8 @@ class DrinkForm extends React.Component {
     e.preventDefault();
     const drink = this.state;
     drink.roaster_id = parseInt(this.state.roaster_id);
-    this.props.createDrink({drink});
+    this.props.updateDrink(drink);
+    this.props.closeModal();
   }
 
   update(field) {
@@ -33,7 +34,6 @@ class DrinkForm extends React.Component {
   }
 
   renderErrors() {
-    // debugger
     if (this.props.errors) {
       return(
         <ul className="welcome-errors">
@@ -47,19 +47,17 @@ class DrinkForm extends React.Component {
     }
   }
 
-
   render () {
     return (
-      <div className="drink-form-page">
-        <div className="drink-form-box">
-          <h1>New Drink</h1>
+      <div className="drink-form-box">
+        <h1>Update Drink</h1>
           {this.renderErrors()}
-  				<form onSubmit={this.handleSubmit} className="drink-form">
+          <form onSubmit={this.handleSubmit} className="drink-form">
             <div className="select-style">
             <select
-  						className="coffee-create-roaster"
-  						value={this.state.roaster}
-  						onChange={this.update("roaster_id")}>
+              className="coffee-create-roaster"
+              value={this.state.roaster_id}
+              onChange={this.update("roaster_id")}>
               <option>Roaster</option>
               {
                 this.props.roasters.map(roaster => (
@@ -70,16 +68,16 @@ class DrinkForm extends React.Component {
               }
             </select>
             </div>
-  					<input type="text"
-  						className="coffee-create-name"
-  						placeholder="Coffee Name"
-  						value={this.state.name}
-  						onChange={this.update("name")} />
+            <input type="text"
+              className="coffee-create-name"
+              placeholder="Coffee Name"
+              value={this.state.name}
+              onChange={this.update("name")} />
             <div className="select-style">
             <select
-  						className="coffee-create-roast-type"
-  						value={this.state.roast_type}
-  						onChange={this.update("roast_type")}>
+              className="coffee-create-roast-type"
+              value={this.state.roast_type}
+              onChange={this.update("roast_type")}>
               <option>Roast Type</option>
               <option value="Light">Light</option>
               <option value="Medium-Light">Medium-Light</option>
@@ -91,17 +89,15 @@ class DrinkForm extends React.Component {
             </select>
             </div>
             <textarea
-  						className="coffee-create-description"
-  						placeholder="Coffee Description"
-  						value={this.state.description}
-  						onChange={this.update("description")} />
-            <input type="submit" value="Create Drink" />
-  				</form>
-        </div>
+              className="coffee-create-description"
+              placeholder="Coffee Description"
+              value={this.state.description}
+              onChange={this.update("description")} />
+            <input type="submit" value="Update Drink" />
+          </form>
       </div>
     );
   }
 }
 
-
-export default DrinkForm;
+export default UpdateModal;

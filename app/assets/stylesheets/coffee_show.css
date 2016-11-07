@@ -225,3 +225,10 @@ form .beans span {
   height: 30px;
   margin: 3px 0;
 }
+
+.update-modal {
+  position: absolute;
+  left: 42%;
+  top: 61px;
+
+}

@@ -1,20 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Modal from 'react-modal';
+import UpdateModalContainer from './update_modal_container';
 
 class DrinkShow extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = { modalIsOpen: false };
+
     this.handleDelete = this.handleDelete.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchDrink(this.props.params.drinkId);
   }
 
+  componentWillMount() {
+    Modal.setAppElement('body');
+  }
+
   handleDelete(e) {
     e.preventDefault();
     this.props.deleteDrink(this.props.params.drinkId);
+  }
+
+  openModal() {
+    this.setState({ modalIsOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
   }
 
   render () {
@@ -65,15 +82,20 @@ class DrinkShow extends React.Component {
             </p>
             <form id="ratingsForm">
               <div className="beans">
-                  <input type="radio" name="bean" className="bean-1" id="bean-1" />
+                  <input type="radio" name="bean"
+                    className="bean-1" id="bean-1" />
                   <label className="bean-1" htmlFor="bean-1">1</label>
-                  <input type="radio" name="bean" className="bean-2" id="bean-2" />
+                  <input type="radio" name="bean"
+                    className="bean-2" id="bean-2" />
                   <label className="bean-2" htmlFor="bean-2">2</label>
-                  <input type="radio" name="bean" className="bean-3" id="bean-3" />
+                  <input type="radio" name="bean"
+                    className="bean-3" id="bean-3" />
                   <label className="bean-3" htmlFor="bean-3">3</label>
-                  <input type="radio" name="bean" className="bean-4" id="bean-4" />
+                  <input type="radio" name="bean"
+                    className="bean-4" id="bean-4" />
                   <label className="bean-4" htmlFor="bean-4">4</label>
-                  <input type="radio" name="bean" className="bean-5" id="bean-5" />
+                  <input type="radio" name="bean"
+                    className="bean-5" id="bean-5" />
                   <label className="bean-5" htmlFor="bean-5">5</label>
                   <span></span>
               </div>
@@ -87,12 +109,21 @@ class DrinkShow extends React.Component {
             <p><span>Description: </span>{drink.description}</p>
 
             <div className="drink-crud-buttons">
-              <a href={`/#/update/${drink.id}`}><button>Update</button></a>
+              <a><button onClick={() => this.openModal()}>Update</button></a>
               <a><button onClick={this.handleDelete}>Delete</button></a>
               <a><button>Check-In</button></a>
             </div>
           </div>
         </div>
+
+        <Modal
+          className="update-modal"
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          >
+
+          <UpdateModalContainer drink={drink} closeModal={this.closeModal}/>
+        </Modal>
       </div>
     );
   }
