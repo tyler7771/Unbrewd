@@ -28,27 +28,32 @@ class RatingIndexItem extends React.Component {
   ratingView() {
     if (this.props.rating.rating) {
       return (
-        <form id="ratingsForm">
-          <div className="beans-rating">
-            <input type="radio" name="bean" value="1" readOnly
-              className="bean-1" id="bean-1" checked={this.checked(1)}/>
-            <label className="bean-1" htmlFor="bean-1">1</label>
-            <input type="radio" name="bean" value="2" readOnly
-              className="bean-2" id="bean-2" checked={this.checked(2)}/>
-            <label className="bean-2" htmlFor="bean-2">2</label>
-            <input type="radio" name="bean" value="3" readOnly
-              className="bean-3" id="bean-3" checked={this.checked(3)}/>
-            <label className="bean-3" htmlFor="bean-3">3</label>
-            <input type="radio" name="bean" value="4" readOnly
-              className="bean-4" id="bean-4" checked={this.checked(4)}/>
-            <label className="bean-4" htmlFor="bean-4">4</label>
-            <input type="radio" name="bean" value="5" readOnly
-              className="bean-5" id="bean-5" checked={this.checked(5)}/>
-            <label className="bean-5" htmlFor="bean-5">5</label>
-            <span></span>
-          </div>
-        </form>
+        <div className="rating-details">
+          {this.descriptionView()}
+          <form id="ratingsForm">
+            <div className="beans-rating">
+              <input type="radio" name="bean" value="1" readOnly
+                className="bean-1" id="bean-1" checked={this.checked(1)}/>
+              <label className="bean-1" htmlFor="bean-1">1</label>
+              <input type="radio" name="bean" value="2" readOnly
+                className="bean-2" id="bean-2" checked={this.checked(2)}/>
+              <label className="bean-2" htmlFor="bean-2">2</label>
+              <input type="radio" name="bean" value="3" readOnly
+                className="bean-3" id="bean-3" checked={this.checked(3)}/>
+              <label className="bean-3" htmlFor="bean-3">3</label>
+              <input type="radio" name="bean" value="4" readOnly
+                className="bean-4" id="bean-4" checked={this.checked(4)}/>
+              <label className="bean-4" htmlFor="bean-4">4</label>
+              <input type="radio" name="bean" value="5" readOnly
+                className="bean-5" id="bean-5" checked={this.checked(5)}/>
+              <label className="bean-5" htmlFor="bean-5">5</label>
+              <span></span>
+            </div>
+          </form>
+        </div>
       );
+    } else {
+      return (<br/>);
     }
   }
 
@@ -76,10 +81,7 @@ class RatingIndexItem extends React.Component {
               &nbsp; {rating.drink.name}
             </Link>
           </span>
-        <div className="rating-details">
-          {this.descriptionView()}
-          {this.ratingView()}
-        </div>
+        {this.ratingView()}
         {this.imageView()}
       </div>
     </  li>
