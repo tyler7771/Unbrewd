@@ -1,22 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Modal from 'react-modal';
+import RoasterModalContainer from './roaster_modal_container';
 
 class DrinkForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       name: "",
-      roaster_id: 100,
+      roaster_id: 5,
       roast_type: "",
       description: ""
     };
 
+    this.state = { modalIsOpen: false };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchRoasters();
+  }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
+  }
+
+  componentWillUnmount() {
+    this.props.removeErrors();
+  }
+
+  openModal() {
+    this.setState({ modalIsOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
   }
 
   handleSubmit(e) {
@@ -55,6 +75,9 @@ class DrinkForm extends React.Component {
           <h1>New Drink</h1>
           {this.renderErrors()}
   				<form onSubmit={this.handleSubmit} className="drink-form">
+            <span>Your favorite roaster's not in the list? &nbsp;
+              <a onClick={() => this.openModal()}>Add Roaster!</a>
+            </span>
             <div className="select-style">
             <select
   						className="coffee-create-roaster"
@@ -69,7 +92,18 @@ class DrinkForm extends React.Component {
                 ))
               }
             </select>
-            </div>
+          </div>
+
+
+            <Modal
+              className="roaster-modal"
+              isOpen={this.state.modalIsOpen}
+              onRequestClose={this.closeModal}
+              >
+
+              <RoasterModalContainer closeModal={this.closeModal}/>
+            </Modal>
+
   					<input type="text"
   						className="coffee-create-name"
   						placeholder="Coffee Name"

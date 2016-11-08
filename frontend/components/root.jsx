@@ -6,6 +6,7 @@ import Welcome from './welcome';
 import DrinkIndexContainer from './drinks/drink_index_container';
 import DrinkShowContainer from './drinks/drink_show_container';
 import DrinkFormContainer from './drinks/drink_form_container';
+import RatingIndexContainer from './ratings/ratings_index_container';
 
 const Root = ({ store }) => {
 
@@ -27,6 +28,7 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App} onEnter={_ensureLoggedIn}>
+          <Route path="/global" component={RatingIndexContainer} />
           <Route path="/new" component={DrinkFormContainer} />
           <Route path="/update/:drinkid" component={DrinkFormContainer} />
           <Route path="/coffee" component={DrinkIndexContainer} />

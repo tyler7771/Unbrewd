@@ -7,6 +7,7 @@ export const CREATE_DRINK = "CREATE_DRINK";
 export const UPDATE_DRINK = "UPDATE_DRINK";
 export const DELETE_DRINK = "DELETE_DRINK";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const REMOVE_ERRORS = "REMOVE_ERRORS";
 
 export const fetchDrinks = () => ({
   type: FETCH_DRINKS
@@ -50,4 +51,8 @@ export const removeDrink = (drink) => ({
 export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
+});
+
+export const removeErrors = () => ({
+  type: REMOVE_ERRORS
 });

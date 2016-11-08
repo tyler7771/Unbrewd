@@ -1,26 +1,31 @@
 import { RECEIVE_ALL_DRINKS,
          RECEIVE_DRINK,
          REMOVE_DRINK,
-         RECEIVE_ERRORS } from '../actions/drink_actions';
+         RECEIVE_ERRORS,
+          REMOVE_ERRORS} from '../actions/drink_actions';
 import merge from 'lodash/merge';
 
 const _default = {
-    drink: null,
+    drink: {},
     errors: []
 };
 
-const DrinksReducer = (oldState = {}, action) => {
+const DrinksReducer = (oldState = _default, action) => {
   switch (action.type) {
     case RECEIVE_ALL_DRINKS:
-      return action.drinks;
+      return merge({}, oldState, {drink: action.drinks});
     case RECEIVE_DRINK:
-      return merge({}, oldState, action.drink);
+      return merge({}, oldState, {drink: action.drink, errors: []});
     case REMOVE_DRINK:
       let newState = merge({}, oldState);
-      delete newState[action.drink.id];
+      delete newState.drink[action.drink.id];
       return newState;
     case RECEIVE_ERRORS:
       return merge({}, oldState, action.errors);
+    case REMOVE_ERRORS:
+      let removeState = merge({}, oldState);
+      removeState.errors = [];
+      return removeState;
     default:
       return oldState;
   }
