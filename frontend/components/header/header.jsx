@@ -12,7 +12,6 @@ const Header = ({currentUser, logout}) => {
         <ul className="nav-links">
           <li><Link to="/global">The Roast</Link></li>
           <li><Link to="/">Top Rated</Link></li>
-          <li><Link to="/new">Rate a Coffee</Link></li>
           <li><Link to="/coffee">All Coffees</Link></li>
         </ul>
         </div>
