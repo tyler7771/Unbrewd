@@ -1,0 +1,53 @@
+form .beans-rating {
+  background: url("http://res.cloudinary.com/dfmvfna21/image/upload/v1478303861/bean-sprite_lvuxjl.png") repeat-x 0 0;
+  width: 150px;
+  margin: 0 auto;
+}
+
+form .beans-rating input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+form .beans-rating input[type="radio"].bean-5:checked ~ span {
+  width: 100%;
+}
+form .beans-rating input[type="radio"].bean-4:checked ~ span {
+  width: 80%;
+}
+form .beans-rating input[type="radio"].bean-3:checked ~ span {
+  width: 60%;
+}
+form .beans-rating input[type="radio"].bean-2:checked ~ span {
+  width: 40%;
+}
+form .beans-rating input[type="radio"].bean-1:checked ~ span {
+  width: 20%;
+}
+form .beans-rating label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0!important;
+  padding: 0!important;
+  text-indent: -999em;
+  float: left;
+  position: relative;
+  z-index: 10;
+  background: transparent!important;
+}
+
+form .beans-rating span {
+  display: block;
+  width: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 30px;
+  background: url("http://res.cloudinary.com/dfmvfna21/image/upload/v1478303861/bean-sprite_lvuxjl.png") repeat-x 0 -40px;
+  -webkit-transition: -webkit-width 0.5s;
+  -moz-transition: -moz-width 0.5s;
+  -ms-transition: -ms-width 0.5s;
+  -o-transition: -o-width 0.5s;
+  transition: width 0.5s;
+}

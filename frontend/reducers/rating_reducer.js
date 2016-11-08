@@ -12,7 +12,6 @@ const _default = {
 const DrinksReducer = (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_ALL_RATINGS:
-      debugger
       return action.ratings;
     case RECEIVE_RATING:
       return merge({}, oldState, action.rating);
