@@ -10,7 +10,7 @@ const Header = ({currentUser, logout}) => {
           <img className= "header-image" src="http://res.cloudinary.com/dfmvfna21/image/upload/v1478040041/kitchen_icon_coffee_cup_lpo5eu.png" />
         </Link>
         <ul className="nav-links">
-          <li><Link to="/">The Roast</Link></li>
+          <li><Link to="/global">The Roast</Link></li>
           <li><Link to="/">Top Rated</Link></li>
           <li><Link to="/new">Rate a Coffee</Link></li>
           <li><Link to="/coffee">All Coffees</Link></li>

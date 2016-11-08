@@ -156,26 +156,8 @@ form .beans label {
   position: relative;
   z-index: 10;
   background: transparent!important;
-  cursor: pointer;
 }
-form .beans label:hover ~ span {
-  background-position: 0 -40px;
-}
-form .beans label.bean-5:hover ~ span {
-  width: 100% !important;
-}
-form .beans label.bean-4:hover ~ span {
-  width: 80% !important;
-}
-form .beans label.bean-3:hover ~ span {
-  width: 60% !important;
-}
-form .beans label.bean-2:hover ~ span {
-  width: 40% !important;
-}
-form .beans label.bean-1:hover ~ span {
-  width: 20% !important;
-}
+
 form .beans span {
   display: block;
   width: 0;

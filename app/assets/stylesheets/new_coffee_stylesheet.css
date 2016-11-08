@@ -1,8 +1,7 @@
 .drink-form-page {
-  height: 95%;
+  height: 90%;
   width: 100%;
   margin: 0 auto;
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;

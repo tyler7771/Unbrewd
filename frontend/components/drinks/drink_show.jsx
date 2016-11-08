@@ -82,20 +82,20 @@ class DrinkShow extends React.Component {
             </p>
             <form id="ratingsForm">
               <div className="beans">
-                  <input type="radio" name="bean"
-                    className="bean-1" id="bean-1" />
+                  <input type="radio" name="bean" disabled="disabled"
+                    className="bean-1" id="bean-1"/>
                   <label className="bean-1" htmlFor="bean-1">1</label>
-                  <input type="radio" name="bean"
-                    className="bean-2" id="bean-2" />
+                  <input type="radio" name="bean" disabled="disabled"
+                    className="bean-2" id="bean-2"/>
                   <label className="bean-2" htmlFor="bean-2">2</label>
-                  <input type="radio" name="bean"
-                    className="bean-3" id="bean-3" />
+                  <input type="radio" name="bean" disabled="disabled"
+                    className="bean-3" id="bean-3"/>
                   <label className="bean-3" htmlFor="bean-3">3</label>
-                  <input type="radio" name="bean"
-                    className="bean-4" id="bean-4" />
+                  <input type="radio" name="bean" disabled="disabled"
+                    className="bean-4" id="bean-4"/>
                   <label className="bean-4" htmlFor="bean-4">4</label>
-                  <input type="radio" name="bean"
-                    className="bean-5" id="bean-5" />
+                  <input type="radio" name="bean" disabled="disabled"
+                    className="bean-5" id="bean-5"/>
                   <label className="bean-5" htmlFor="bean-5">5</label>
                   <span></span>
               </div>

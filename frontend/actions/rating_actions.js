@@ -17,14 +17,14 @@ export const fetchRating = (id) => ({
   id
 });
 
-export const createRating = (drink) => ({
+export const createRating = (rating) => ({
   type: CREATE_RATING,
-  drink
+  rating
 });
 
-export const updateRating = (drink) => ({
+export const updateRating = (rating) => ({
   type: UPDATE_RATING,
-  drink
+  rating
 });
 
 export const deleteRating = (id) => ({
@@ -32,19 +32,19 @@ export const deleteRating = (id) => ({
   id
 });
 
-export const receiveAllRatings = (drinks) => ({
+export const receiveAllRatings = (ratings) => ({
   type: RECEIVE_ALL_RATINGS,
-  drinks
+  ratings
 });
 
-export const receiveRating = (drink) => ({
+export const receiveRating = (rating) => ({
   type: RECEIVE_RATING,
-  drink
+  rating
 });
 
-export const removeRating = (drink) => ({
+export const removeRating = (rating) => ({
   type: REMOVE_RATING,
-  drink
+  rating
 });
 
 export const receiveErrors = (errors) => ({

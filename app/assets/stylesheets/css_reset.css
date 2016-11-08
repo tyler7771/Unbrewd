@@ -15,5 +15,14 @@ span, article, footer, time, small {
 
 body, main, html {
   height: 100%;
-  position: relative;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex: 1;
 }

@@ -34,7 +34,6 @@ const RatingsMiddleware = ({ getState, dispatch }) => next => action => {
 
   switch (action.type) {
     case FETCH_RATINGS:
-      debugger
       fetchRatings(fetchAllRatingsSuccess);
       return next(action);
     case FETCH_RATING:

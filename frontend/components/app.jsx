@@ -5,9 +5,11 @@ import HeaderContainer from './header/headercontainer';
 import Footer from './footer/footer';
 
 const App = ({ children }) => (
-  <div>
-    <HeaderContainer />
-    {children}
+  <div className="app">
+    <section className="content">
+      <HeaderContainer />
+      {children}
+    </section>
     <Footer />
   </div>
 );
