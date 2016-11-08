@@ -35,7 +35,7 @@ Drink.create(name: 'Veranda Blend', roaster_id: 3, roast_type: "Light", descript
 Drink.create(name: 'White Owl', roaster_id: 2, roast_type: "Light", description: "An organic blend with radiant sweet bright red berry, creamy vanilla and a light coca finish. Roasted in San Diego, CA.")
 Drink.create(name: 'Willow Blend', roaster_id: 3, roast_type: "Light", description: "The lighter roast reveals the juicy lemony notes we love to discover in African coffee, followed by a crisp finish courtesy of the Latin American beans. Graceful with a deep, enveloping flavor, it's everything you'd want from a light roast—and much more than you'd expect.")
 
-Rating.create(rating: nil, description: nil, user_id: 1, drink_id: 2)
+Rating.create(rating: nil, description: nil, user_id: 1, drink_id: 2, picture_url:"http://res.cloudinary.com/dfmvfna21/image/upload/c_scale,h_199/v1478563599/coffee-cup-outline_318-39738_sl1xhs.jpg")
 Rating.create(rating: 4, description: "Really Good", user_id: 2, drink_id: 4)
 Rating.create(rating: 2, description: "Ok", user_id: 2, drink_id: 7)
 Rating.create(rating: nil, description: nil, user_id: 2, drink_id: 9)

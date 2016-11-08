@@ -42,10 +42,6 @@
   margin: 0;
 }
 
-.drink-index > ul {
-  padding: 0;
-}
-
 .drink-index-item {
   background-color: white;
   width: 65%;
