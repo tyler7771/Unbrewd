@@ -4,6 +4,7 @@ import { Link, hashHistory } from 'react-router';
 class RatingIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    // debugger
   }
 
   checked (value) {
@@ -14,51 +15,73 @@ class RatingIndexItem extends React.Component {
     }
   }
 
-  description() {
+  descriptionView() {
     if (this.props.rating.description) {
-      debugger
       return (
         <p className="drink-index-description">
-          <span>Description: </span>{this.propsrating.description}
+          {this.props.rating.description}
         </p>
       );
     }
   }
 
+  ratingView() {
+    if (this.props.rating.rating) {
+      return (
+        <form id="ratingsForm">
+          <div className="beans-rating">
+            <input type="radio" name="bean" value="1" readOnly
+              className="bean-1" id="bean-1" checked={this.checked(1)}/>
+            <label className="bean-1" htmlFor="bean-1">1</label>
+            <input type="radio" name="bean" value="2" readOnly
+              className="bean-2" id="bean-2" checked={this.checked(2)}/>
+            <label className="bean-2" htmlFor="bean-2">2</label>
+            <input type="radio" name="bean" value="3" readOnly
+              className="bean-3" id="bean-3" checked={this.checked(3)}/>
+            <label className="bean-3" htmlFor="bean-3">3</label>
+            <input type="radio" name="bean" value="4" readOnly
+              className="bean-4" id="bean-4" checked={this.checked(4)}/>
+            <label className="bean-4" htmlFor="bean-4">4</label>
+            <input type="radio" name="bean" value="5" readOnly
+              className="bean-5" id="bean-5" checked={this.checked(5)}/>
+            <label className="bean-5" htmlFor="bean-5">5</label>
+            <span></span>
+          </div>
+        </form>
+      );
+    }
+  }
+
+  imageView() {
+    if (this.props.rating.picture_url) {
+      return <img src={this.props.rating.picture_url} />;
+    }
+  }
+
+  name (name) {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  }
+
   render () {
     let rating = this.props.rating;
     return (
-      <li className="drink-index-item">
-        <div className="drink-index-text">
-          <p className="drink-index-roast-type">
-            {rating.user.username}<span> is drinking a</span>
-          </p>
-          <Link to={`/coffee/${rating.drink.id}`}>
-            <h2 className="drink-index-title">{rating.drink.name}</h2>
-          </Link>
-          <form id="ratingsForm">
-            <div className="beans-rating">
-              <input type="radio" name="bean" value="1" readOnly
-                className="bean-1" id="bean-1" checked={this.checked(1)}/>
-              <label className="bean-1" htmlFor="bean-1">1</label>
-              <input type="radio" name="bean" value="2" readOnly
-                className="bean-2" id="bean-2" checked={this.checked(2)}/>
-              <label className="bean-2" htmlFor="bean-2">2</label>
-              <input type="radio" name="bean" value="3" readOnly
-                className="bean-3" id="bean-3" checked={this.checked(3)}/>
-              <label className="bean-3" htmlFor="bean-3">3</label>
-              <input type="radio" name="bean" value="4" readOnly
-                className="bean-4" id="bean-4" checked={this.checked(4)}/>
-              <label className="bean-4" htmlFor="bean-4">4</label>
-              <input type="radio" name="bean" value="5" readOnly
-                className="bean-5" id="bean-5" checked={this.checked(5)}/>
-              <label className="bean-5" htmlFor="bean-5">5</label>
-              <span></span>
-            </div>
-          </form>
-          {this.description}
+      <li className="rating-index-item">
+        <img className="user-pic" src={this.props.rating.user.picture_url} />
+        <div className="rating-index-info">
+          <span>
+            <Link to={`/user/${rating.user.id}`}>
+              {this.name(rating.user.username)} is drinking a
+            </Link>
+            <Link to={`/coffee/${rating.drink.id}`}>
+              &nbsp; {rating.drink.name}
+            </Link>
+          </span>
+        <div className="rating-details">
+          {this.descriptionView()}
+          {this.ratingView()}
         </div>
-        <img className="drink-index-image" src={rating.picture_url} />
+        {this.imageView()}
+      </div>
     </  li>
   );
   }

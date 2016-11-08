@@ -1,7 +1,46 @@
+.rating-index {
+  max-width: 1048px;
+  width: 97%;
+  margin: 0 auto;
+}
+
+.user-pic {
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+}
+
+.rating-index-item {
+  background-color: white;
+  width: 65%;
+  margin: 15px 0;
+  padding: 20px;
+  display: flex;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+   -moz-box-shadow: 0 10px 6px -6px #777;
+        box-shadow: 0 10px 6px -6px #777;
+}
+
+.rating-index-info {
+  margin-left: 15px;
+  width: 90%
+}
+
+.rating-index-info > span {
+  font-size: 20px;
+}
+
+.rating-details {
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
 form .beans-rating {
   background: url("http://res.cloudinary.com/dfmvfna21/image/upload/v1478303861/bean-sprite_lvuxjl.png") repeat-x 0 0;
   width: 150px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 form .beans-rating input[type="radio"] {
