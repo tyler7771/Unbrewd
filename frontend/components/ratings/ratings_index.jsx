@@ -1,20 +1,19 @@
 import React from 'react';
-import DrinkIndexItem from './drink_index_item';
-import DrinkForm from './drink_form';
+import RatingIndexItem from './rating_index_item';
 import { sortBy } from "lodash";
 
-class DrinkIndex extends React.Component {
+class RatingIndex extends React.Component {
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
-    this.props.fetchDrinks();
+    this.props.fetchRatings();
   }
 
   sortedItems(){
     let order = this.state.sortOrder;
-    let sorted = this.props.drinks.sort(function(a, b) {
+    let sorted = this.props.ratings.sort(function(a, b) {
         if (a[order] < b[order]) {
           return -1;
         } else {
@@ -31,25 +30,16 @@ class DrinkIndex extends React.Component {
   }
 
   render () {
+
     return (
-      <div className="drink-index">
-        <div className="finding-drinks">
-          <h1>All Our Coffees!</h1>
-          <h2>Check out our awesome list of coffees! Click on any coffee
-          that you like to get details and ratings on that coffee!</h2>
-
-        <span>Don't see your favorite coffee? &nbsp;
-            <a href="/#/new">Add it to our list!</a>
-        </span>
-
-        </div>
+      <div className="rating-index">
         <ul>
             {
-              this.props.drinks.map(drink => (
-                <DrinkIndexItem
-                  key={drink.id}
-                  deleteDrink={this.props.deleteDrink}
-                  drink={drink} />
+              this.props.ratings.map(rating => (
+                <RatingIndexItem
+                  key={rating.id}
+                  deleteRating={this.props.deleteRating}
+                  rating={rating} />
               ))
             }
           </ul>
@@ -58,7 +48,7 @@ class DrinkIndex extends React.Component {
   }
 }
 
-export default DrinkIndex;
+export default RatingIndex;
 
 
 // <div className="sort">

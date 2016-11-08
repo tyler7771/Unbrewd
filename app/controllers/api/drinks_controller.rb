@@ -11,7 +11,6 @@ class Api::DrinksController < ApplicationController
 
   def create
     @drink = Drink.new(drink_params)
-
     if @drink.save
       render :show
     else

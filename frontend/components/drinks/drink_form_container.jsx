@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import DrinkForm from './drink_form';
-import { createDrink } from '../../actions/drink_actions';
-import { fetchRoasters } from '../../actions/roaster_actions';
+import { createDrink, removeErrors } from '../../actions/drink_actions';
+import { createRoaster, fetchRoasters } from '../../actions/roaster_actions';
 
 const mapStateToProps = state => ({
   roasters: Object.keys(state.roaster).map(id => state.roaster[id]),
@@ -10,7 +10,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch, { location }) => ({
   fetchRoasters: () => dispatch(fetchRoasters()),
-  createDrink: (drink) => dispatch(createDrink(drink))
+  createRoaster: (roaster) => dispatch(createRoaster(roaster)),
+  createDrink: (drink) => dispatch(createDrink(drink)),
+  removeErrors: () => dispatch(removeErrors()),
 });
 
 export default connect(

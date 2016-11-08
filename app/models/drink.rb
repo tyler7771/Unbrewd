@@ -3,4 +3,5 @@ class Drink < ActiveRecord::Base
 
   belongs_to :roaster
   has_many :coffee_shops, through: :shops_coffees
+  has_many :ratings
 end

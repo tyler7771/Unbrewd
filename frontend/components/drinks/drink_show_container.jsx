@@ -3,7 +3,7 @@ import DrinkShow from './drink_show';
 import { fetchDrink, deleteDrink } from '../../actions/drink_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  drink: state.drink[ownProps.params.drinkId]
+  drink: state.drink.drink[ownProps.params.drinkId]
 });
 
 const mapDispatchToProps = dispatch => ({

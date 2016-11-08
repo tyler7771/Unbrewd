@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104170543) do
+ActiveRecord::Schema.define(version: 20161108004238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20161104170543) do
   end
 
   add_index "drinks", ["name"], name: "index_drinks_on_name", using: :btree
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "rating"
+    t.string   "description"
+    t.datetime "created_at",                                                                                                                                 null: false
+    t.datetime "updated_at",                                                                                                                                 null: false
+    t.string   "picture_url", default: "http://res.cloudinary.com/dfmvfna21/image/upload/c_scale,h_209/v1478563599/coffee-cup-outline_318-39738_sl1xhs.jpg"
+    t.integer  "drink_id",                                                                                                                                   null: false
+    t.integer  "user_id",                                                                                                                                    null: false
+  end
 
   create_table "roasters", force: :cascade do |t|
     t.string   "name",                                                                                                                                   null: false
