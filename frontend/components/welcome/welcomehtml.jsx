@@ -91,11 +91,16 @@ class Welcome extends React.Component {
 
   render () {
     return (
-      <div className="background">
-        <div className="welcome">
-          <img className="logo" src="http://res.cloudinary.com/dfmvfna21/image/upload/v1478119908/Coffee_Decorative_Text_PNG_Vector_Clipart_1_wf6ey5.png" />
-          {this.formShowing()}
+      <div>
+        <div className="background">
         </div>
+        <div className="opacity"></div>
+        <div className="welcome-content">
+          <img className="logo" src="http://res.cloudinary.com/dfmvfna21/image/upload/c_scale,h_108/v1478714046/unbrewdOfficial-white_nwmhph.png" />
+          <div className="welcome">
+            {this.formShowing()}
+          </div>
+          </div>
       </div>
     );
   }
