@@ -1,7 +1,6 @@
 class Api::RatingsController < ApplicationController
   def index
-    @ratings = Rating.includes(:user, :drink).all
-    @ratings = @ratings.reverse
+    @ratings = Rating.includes(:user, :drink).all.reverse
     render :index
   end
 

@@ -7,7 +7,7 @@ const Header = ({currentUser, logout}) => {
       <div className="header-content">
         <div className="header-containers">
         <Link to="/">
-          <img className= "header-image" src="http://res.cloudinary.com/dfmvfna21/image/upload/v1478040041/kitchen_icon_coffee_cup_lpo5eu.png" />
+          <img className= "header-image" src="http://res.cloudinary.com/dfmvfna21/image/upload/c_scale,w_437/v1478718105/unbrewdOfficialBG_p2l9kx.png" />
         </Link>
         <ul className="nav-links">
           <li><Link to="/global">The Roast</Link></li>

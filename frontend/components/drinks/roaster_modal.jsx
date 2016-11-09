@@ -19,9 +19,12 @@ class RoasterModal extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
+    debugger
+    return e =>
+      {e.preventDefault();
+      this.setState({
       [field]: e.currentTarget.value
-    });
+    });};
   }
 
   renderErrors() {
@@ -49,7 +52,13 @@ class RoasterModal extends React.Component {
               placeholder="Coffee Name"
               value={this.state.name}
               onChange={this.update("name")} />
-            <button>Upload Logo</button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                window.cloudinary.openUploadWidget(window.cloudinary_options,
+                this.update("picture_url"));}}>
+              Upload Logo
+            </button>
 
             <input type="submit" value="Create Roaster" />
           </form>

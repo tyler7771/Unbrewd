@@ -36,10 +36,19 @@ header {
   font-size: 18px;
 }
 
+.nav-links > li:hover {
+  color: #67432D;
+}
+
 .header-image {
-  background-color: white;
+  background-color: #F7F1E0;
   vertical-align: middle;
   margin-right: 10px;
+  height: 40px;
+}
+
+.header-image:hover {
+  background-color: #67432D;
 }
 
 .search-bar {
@@ -53,10 +62,6 @@ header {
   background-position: right center;
   padding-right: 25px;
   align-self: center;
-}
-
-.header-image:hover {
-  background-color: black;
 }
 
 .user-button {
