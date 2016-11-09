@@ -208,9 +208,8 @@ form .beans span {
   margin: 3px 0;
 }
 
-.update-modal {
+.update-modal, .check-in-modal {
   position: absolute;
   left: 42%;
   top: 61px;
-
 }

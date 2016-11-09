@@ -4,11 +4,10 @@ import { Link, hashHistory } from 'react-router';
 class RatingIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
   }
 
   checked (value) {
-    if (value === this.props.rating.rating) {
+    if (value === this.props.rating.checkin_rating) {
       return "checked";
     } else {
       return "";
@@ -26,7 +25,7 @@ class RatingIndexItem extends React.Component {
   }
 
   ratingView() {
-    if (this.props.rating.rating) {
+    if (this.props.rating.checkin_rating) {
       return (
         <div className="rating-details">
           {this.descriptionView()}
@@ -74,11 +73,12 @@ class RatingIndexItem extends React.Component {
         <img className="user-pic" src={this.props.rating.user.picture_url} />
         <div className="rating-index-info">
           <span>
-            <Link to={`/user/${rating.user.id}`}>
-              {this.name(rating.user.username)} is drinking a
+            <Link to={`/user/${rating.user.id}`} className="rating-link">
+              {this.name(rating.user.username)}
             </Link>
-            <Link to={`/coffee/${rating.drink.id}`}>
-              &nbsp; {rating.drink.name}
+            <span> is drinking a </span>
+            <Link to={`/coffee/${rating.drink.id}`} className="rating-link">
+              {rating.drink.name}
             </Link>
           </span>
         {this.ratingView()}
