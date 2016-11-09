@@ -1,6 +1,6 @@
 # Unbrewd
 
-[Live Site](https://www.unbrewd.us)
+[Live Site](www.unbrewd.us)
 
 Unbrewd is a full-stack web app based off Untapped.com to research and
 review different coffees that they've tried. It uses Ruby on Rails on the
