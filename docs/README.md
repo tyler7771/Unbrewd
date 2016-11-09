@@ -1,6 +1,6 @@
 # Unbrewd
 
-[Heroku link](https://www.unbrewd.us)
+[Heroku link](www.unbrewd.us)
 
 [Trello link](https://trello.com/b/idvY8Nb8/unbrewd)
 
