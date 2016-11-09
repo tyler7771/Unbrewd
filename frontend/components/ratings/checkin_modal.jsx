@@ -17,7 +17,6 @@ class CheckInModal extends React.Component {
     e.preventDefault();
     const rating = this.state;
     rating.checkin_rating = parseInt(this.state.checkin_rating);
-    debugger
     this.props.createRating(rating);
     this.props.closeModal();
   }
@@ -48,6 +47,12 @@ class CheckInModal extends React.Component {
       return "checked";
     } else {
       return "";
+    }
+  }
+
+  previewImage() {
+    if (this.state.picture_url !== "") {
+      return <img src={this.state.picture_url} className="modal-img"/>;
     }
   }
 
@@ -106,7 +111,17 @@ class CheckInModal extends React.Component {
 
               <span></span>
             </div>
-            <button>Upload Image</button>
+            {this.previewImage()}
+            <button onClick={(e) => {
+              e.preventDefault();
+              window.cloudinary.openUploadWidget(window.cloudinary_options,
+                function(error, results){
+                      if(!error){
+                        this.setState({picture_url: results[0].url});
+                      }
+                    }.bind(this));}}>
+              Upload Image
+            </button>
             <input type="submit" value="Check In" />
           </form>
       </div>

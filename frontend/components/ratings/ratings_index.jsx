@@ -37,7 +37,6 @@ class RatingIndex extends React.Component {
               this.props.ratings.map(rating => (
                 <RatingIndexItem
                   key={rating.id}
-                  deleteRating={this.props.deleteRating}
                   rating={rating} />
               ))
             }

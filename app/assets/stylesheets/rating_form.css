@@ -1,7 +1,7 @@
 form .beans-form-checkin {
   background: url("http://res.cloudinary.com/dfmvfna21/image/upload/v1478303861/bean-sprite_lvuxjl.png") repeat-x 0 0;
   width: 150px;
-  margin: 0 auto;
+  margin: 10px auto 0;
 }
 
 form .beans-form-checkin input[type="radio"] {
@@ -68,4 +68,10 @@ form .beans-form-checkin span {
   -ms-transition: -ms-width 0.5s;
   -o-transition: -o-width 0.5s;
   transition: width 0.5s;
+}
+
+.modal-img {
+  margin-top: 10px;
+  width: 280px;
+  align-self: center;
 }

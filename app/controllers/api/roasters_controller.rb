@@ -9,7 +9,11 @@ class Api::RoastersController < ApplicationController
   end
 
   def create
-    @roaster = Roaster.new(roaster_params)
+    if params[:roaster][:picture_url] == ""
+      @roaster = Roaster.new({name: params[:roaster][:name]})
+    else
+      @roaster = Roaster.new(roaster_params)
+    end
 
     if @roaster.save
       render :show

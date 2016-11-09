@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import Modal from 'react-modal';
 import UpdateModalContainer from './update_modal_container';
 import CheckInModalContainer from '../ratings/checkin_modal_container';
+import RatingIndexItem from '../ratings/rating_index_item';
 
 class DrinkShow extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class DrinkShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchDrink(this.props.params.drinkId);
+    this.props.fetchRatings({type: "drink", id: this.props.params.drinkId});
   }
 
   componentWillMount() {
@@ -151,6 +153,16 @@ class DrinkShow extends React.Component {
           <CheckInModalContainer drink={drink}
             closeModal={this.closeCheckInModal}/>
         </Modal>
+
+        <ul className="show-ratings">
+            {
+              this.props.ratings.map(rating => (
+                <RatingIndexItem
+                  key={rating.id}
+                  rating={rating} />
+              ))
+            }
+          </ul>
       </div>
     );
   }

@@ -18,10 +18,11 @@ export const updateRating = (rating, success, error) => {
   });
 };
 
-export const fetchRatings = success => {
+export const fetchRatings = (success, params) => {
   $.ajax({
     method: "GET",
     url: "api/ratings",
+    data: {params},
     success
   });
 };
