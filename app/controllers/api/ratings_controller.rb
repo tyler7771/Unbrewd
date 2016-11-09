@@ -38,6 +38,6 @@ class Api::RatingsController < ApplicationController
   private
   def rating_params
     params.require(:rating)
-    .permit(:drink_id, :rating, :description, :picture_url)
+    .permit(:drink_id, :checkin_rating, :description, :picture_url)
   end
 end

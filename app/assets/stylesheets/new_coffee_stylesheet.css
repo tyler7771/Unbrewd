@@ -86,7 +86,7 @@
   padding: 7px;
 }
 
-.drink-form > input[type="submit"] {
+input[type="submit"] {
   display: block;
   margin: 8px auto;
   width: 280px;

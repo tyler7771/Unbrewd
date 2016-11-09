@@ -2,7 +2,7 @@ export const createRating = (rating, success, error) => {
   $.ajax({
     method: 'POST',
     url: 'api/ratings/',
-    data: rating,
+    data: {rating},
     success,
     error
   });
