@@ -19,12 +19,15 @@ class RoasterModal extends React.Component {
   }
 
   update(field) {
-    debugger
-    return e =>
-      {e.preventDefault();
-      this.setState({
+    return e => this.setState({
       [field]: e.currentTarget.value
-    });};
+    });
+  }
+
+  previewImage() {
+    if (this.state.picture_url !== "") {
+      return <img src={this.state.picture_url} className="modal-img"/>;
+    }
   }
 
   renderErrors() {
@@ -49,14 +52,19 @@ class RoasterModal extends React.Component {
           <form onSubmit={this.handleSubmit} className="drink-form">
             <input type="text"
               className="coffee-create-name"
-              placeholder="Coffee Name"
+              placeholder="Roaster Name"
               value={this.state.name}
               onChange={this.update("name")} />
+            {this.previewImage()}
             <button
               onClick={(e) => {
                 e.preventDefault();
                 window.cloudinary.openUploadWidget(window.cloudinary_options,
-                this.update("picture_url"));}}>
+                  function(error, results){
+                        if(!error){
+                          this.setState({picture_url: results[0].url});
+                        }
+                      }.bind(this));}}>
               Upload Logo
             </button>
 

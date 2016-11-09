@@ -8,8 +8,9 @@ export const UPDATE_RATING = "UPDATE_RATING";
 export const DELETE_RATING = "DELETE_RATING";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
-export const fetchRatings = () => ({
-  type: FETCH_RATINGS
+export const fetchRatings = (params) => ({
+  type: FETCH_RATINGS,
+  params
 });
 
 export const fetchRating = (id) => ({

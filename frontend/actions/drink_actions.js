@@ -10,7 +10,7 @@ export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const REMOVE_ERRORS = "REMOVE_ERRORS";
 
 export const fetchDrinks = () => ({
-  type: FETCH_DRINKS
+  type: FETCH_DRINKS,
 });
 
 export const fetchDrink = (id) => ({

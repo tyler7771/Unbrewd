@@ -1,7 +1,11 @@
 class Api::RatingsController < ApplicationController
   def index
-    @ratings = Rating.includes(:user, :drink).all.reverse
-    render :index
+    if params[:params]
+      @ratings = Rating.index_with_params(params[:params])
+    else
+      @ratings = Rating.includes(:user, :drink).all.reverse
+      render :index
+    end
   end
 
   def show
@@ -38,6 +42,6 @@ class Api::RatingsController < ApplicationController
   private
   def rating_params
     params.require(:rating)
-    .permit(:drink_id, :checkin_rating, :description, :picture_url)
+    .permit(:drink_id, :checkin_rating, :description, :picture_url, :display_data)
   end
 end
