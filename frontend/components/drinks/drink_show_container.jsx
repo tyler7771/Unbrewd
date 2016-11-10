@@ -7,11 +7,13 @@ import { fetchRatings, deleteRating } from '../../actions/rating_actions';
 const mapStateToProps = (state, ownProps) => ({
   drink: state.drink.drink[ownProps.params.drinkId],
   ratings: state.rating,
+  stats: state.drink.drink[ownProps.params.drinkId] ?
+    state.drink.drink[ownProps.params.drinkId].stats : {},
   currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchDrink: id => dispatch(fetchDrink({id: id, type: "drink"})),
+  fetchDrink: params => dispatch(fetchDrink(params)),
   fetchRatings: params => dispatch(fetchRatings(params)),
   deleteRating: rating => dispatch(deleteRating(rating)),
   deleteDrink: id => dispatch(deleteDrink(id)),

@@ -8,7 +8,7 @@ class DrinkIndex extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillReceiveProps() {
     this.props.fetchDrinks();
   }
 

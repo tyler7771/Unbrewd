@@ -20,7 +20,7 @@ const Header = ({currentUser, logout}) => {
           <img src={currentUser.picture_url} />
           <ul className="user-dropdown">
             <li><Link to="/">Recent Activity</Link></li>
-            <li><Link to="/">Profile</Link></li>
+            <li><Link to={"/"}>Profile</Link></li>
             <li><Link to="/">Coffee History</Link></li>
             <li onClick={logout}>Logout</li>
           </ul>

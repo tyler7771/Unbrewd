@@ -8,7 +8,7 @@ class DrinkForm extends React.Component {
     super(props);
     this.state = {
       name: "",
-      roaster_id: 5,
+      roaster_id: 1,
       roast_type: "",
       description: ""
     };

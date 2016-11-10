@@ -20,6 +20,12 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    debugger
+    @drink = User.find(params[:id])
+    @stats = Rating.statistics(params[:params], current_user)
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :password, :picture_url)

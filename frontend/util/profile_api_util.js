@@ -8,10 +8,11 @@ export const updateProfile = (user, success, error) => {
   });
 };
 
-export const fetchProfile = (id, success) => {
+export const fetchProfile = (params, success) => {
   $.ajax({
     method: "GET",
-    url: `api/users/${id}`,
+    url: `api/users/${params.id}`,
+    data: {params},
     success
   });
 };
