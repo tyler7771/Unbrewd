@@ -18,7 +18,11 @@ class DrinkShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchDrink(this.props.params.drinkId);
-    this.props.fetchRatings({type: "drink", id: this.props.params.drinkId});
+    this.props.fetchRatings({
+      type: "drink",
+      id: this.props.params.drinkId,
+      amount: 15
+    });
   }
 
   componentWillMount() {
@@ -44,6 +48,17 @@ class DrinkShow extends React.Component {
 
   closeCheckInModal() {
     this.setState({ checkInModalIsOpen: false });
+  }
+
+  showAllButton() {
+    if (this.props.ratings.length == 15) {
+      return (
+        <button onClick={() => this.props.fetchRatings({
+            type: "drink", id: this.props.params.drinkId})}>
+            Show All
+          </button>
+      );
+    }
   }
 
   render () {
@@ -154,15 +169,21 @@ class DrinkShow extends React.Component {
             closeModal={this.closeCheckInModal}/>
         </Modal>
 
+        <div className="finding-drinks">
+            <h1>Recent Global Activity</h1>
+            <h2>Check out what others have to say about this coffee!</h2>
+        </div>
+
         <ul className="show-ratings">
-            {
-              this.props.ratings.map(rating => (
-                <RatingIndexItem
-                  key={rating.id}
-                  rating={rating} />
-              ))
-            }
-          </ul>
+          {
+            this.props.ratings.map(rating => (
+              <RatingIndexItem
+                key={rating.id}
+                rating={rating} />
+            ))
+          }
+        </ul>
+        {this.showAllButton()}
       </div>
     );
   }

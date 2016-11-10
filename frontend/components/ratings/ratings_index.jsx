@@ -8,7 +8,7 @@ class RatingIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchRatings();
+    this.props.fetchRatings({amount: 20});
   }
 
   sortedItems(){
@@ -32,6 +32,10 @@ class RatingIndex extends React.Component {
   render () {
     return (
       <div className="rating-index">
+        <div className="finding-drinks">
+            <h1>Recent Global Activity</h1>
+            <h2>Check out what others have to say about our coffees!</h2>
+        </div>
         <ul>
             {
               this.props.ratings.map(rating => (
@@ -47,22 +51,3 @@ class RatingIndex extends React.Component {
 }
 
 export default RatingIndex;
-
-
-// <div className="sort">
-//   <h2>Sort by: </h2>
-//   <div className="select-style">
-//     <select
-//       className="coffee-sort"
-//       value={this.state.sortOrder}
-//       onChange={this.update("sortOrder")}>
-//       <option value="name">Coffee Name A-Z</option>
-//       <option value="name">Coffee Name Z-A</option>
-//       <option value="Medium-Light">Roaster A-Z</option>
-//       <option value="Medium-Light">Roaster Z-A</option>
-//       <option value="roast_type">Roast Type</option>
-//       <option value="Medium">Highest Rated</option>
-//     </select>
-//   </div>
-// </div>
-//

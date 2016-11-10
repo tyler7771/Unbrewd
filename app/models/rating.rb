@@ -9,6 +9,12 @@ class Rating < ActiveRecord::Base
     elsif params[:user]
       @ratings = User.find(name: params[:user][:username])
     end
-    @ratings.ratings.includes(:user, :drink).all.reverse
+
+    if params[:amount] && @ratings.ratings.all.length > params[:ammount].to_i
+
+      return @ratings.ratings.includes(:user, :drink).all.reverse.slice(0, params[:amount].to_i)
+    else
+      return @ratings.ratings.includes(:user, :drink).all.reverse
+    end
   end
 end
