@@ -3,4 +3,7 @@ json.set! @drink.id do
   json.set! :roaster do
     json.extract! @drink.roaster, :id, :name, :picture_url
   end
+  json.set! :stats do
+    json.extract! @stats, :all, :unique, :user, :average_rating, :count
+  end
 end

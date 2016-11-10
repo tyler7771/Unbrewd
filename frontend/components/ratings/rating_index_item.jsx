@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import Modal from 'react-modal';
+import RatingUpdateModalContainer from './rating_update_modal_container';
 
 class RatingIndexItem extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { updateModalIsOpen: false};
   }
 
   checked (value) {
@@ -12,6 +16,14 @@ class RatingIndexItem extends React.Component {
     } else {
       return "";
     }
+  }
+
+  openUpdateModal() {
+    this.setState({ updateModalIsOpen: true });
+  }
+
+  closeUpdateModal() {
+    this.setState({ updateModalIsOpen: false });
   }
 
   descriptionView() {
@@ -66,6 +78,24 @@ class RatingIndexItem extends React.Component {
     return name.charAt(0).toUpperCase() + name.slice(1);
   }
 
+  buttons() {
+    if (this.props.rating.user.username === this.props.currentUser.username) {
+      return (
+        <div className="drink-crud-buttons">
+          <a onClick={() => this.props.deleteRating(this.props.rating.id)}>
+          <button>
+            Delete
+          </button></a>
+          <a
+            onClick={() => this.openUpdateModal()}>
+          <button>
+            Update
+          </button></a>
+        </div>
+      );
+    }
+  }
+
   render () {
     let rating = this.props.rating;
     return (
@@ -83,6 +113,17 @@ class RatingIndexItem extends React.Component {
           </span>
         {this.ratingView()}
         {this.imageView()}
+        {this.buttons()}
+
+        <Modal
+          className="rating-update-modal"
+          isOpen={this.state.updateModalIsOpen}
+          onRequestClose={this.closeUpdateModal}
+          >
+
+          <RatingUpdateModalContainer rating={rating}
+            closeModal={this.closeUpdateModal}/>
+        </Modal>
       </div>
     </  li>
   );

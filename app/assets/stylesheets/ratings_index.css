@@ -141,4 +141,10 @@ form .beans-rating span {
   width: 200px;
   height: 200px;
   margin-top: 10px;
+  display: block;
+}
+
+.rating-index-info > .drink-crud-buttons > a > button{
+  margin-top: 10px;
+  display: inline;
 }
