@@ -15,7 +15,7 @@ const ProfilesMiddleware = ({ getState, dispatch }) => next => action => {
 
   switch (action.type) {
     case FETCH_PROFILE:
-      fetchProfile(action.id, fetchProfileSuccess);
+      fetchProfile(action.params, fetchProfileSuccess);
       return next(action);
     case UPDATE_PROFILE:
       updateProfile(action.profile, fetchProfileSuccess);

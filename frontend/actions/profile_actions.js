@@ -2,9 +2,9 @@ export const FETCH_PROFILE = "FETCH_PROFILE";
 export const RECEIVE_PROFILE = "RECEIVE_PROFILE";
 export const UPDATE_PROFILE = "UPDATE_PROFILE";
 
-export const fetchProfile = (id) => ({
+export const fetchProfile = (params) => ({
   type: FETCH_PROFILE,
-  id
+  params
 });
 
 export const updateProfile = (profile) => ({

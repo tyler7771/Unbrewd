@@ -30,7 +30,7 @@ class RatingIndex extends React.Component {
   }
 
   render () {
-    debugger
+
     return (
       <div className="rating-index">
         <div className="finding-drinks">

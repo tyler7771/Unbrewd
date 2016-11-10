@@ -17,17 +17,19 @@ class DrinkShow extends React.Component {
   }
 
   componentDidMount() {
-
-    this.props.fetchDrink(this.props.params.drinkId);
-  }
-
-  componentWillMount() {
-    Modal.setAppElement('body');
+    this.props.fetchDrink({
+      id: this.props.params.drinkId,
+      type: "drink",
+    });
     this.props.fetchRatings({
       type: "drink",
       id: this.props.params.drinkId,
       amount: 15
     });
+  }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
   }
 
   handleDelete(e) {
@@ -54,8 +56,10 @@ class DrinkShow extends React.Component {
   showAllButton() {
     if (this.props.ratings.length === 15) {
       return (
-        <button onClick={() => this.props.fetchRatings({
-            type: "drink", id: this.props.params.drinkId})}>
+        <button onClick={() => {
+            this.props.fetchRatings({
+            type: "drink", id: this.props.params.drinkId});
+          }}>
             Show All
           </button>
       );
@@ -63,7 +67,7 @@ class DrinkShow extends React.Component {
   }
 
   checked (value) {
-    if (value === this.props.ratings[0].stats.average_rating) {
+    if (value === this.props.stats.average_rating) {
       return "checked";
     } else {
       return "";
@@ -72,7 +76,7 @@ class DrinkShow extends React.Component {
 
   table () {
     if (this.props.ratings) {
-      const stats = this.props.ratings[0].stats;
+      const stats = this.props.stats;
       return (
         <table className="drink-statistics">
           <tbody>
@@ -101,11 +105,10 @@ class DrinkShow extends React.Component {
 
   render () {
     const drink = this.props.drink;
-
     if (!drink) {
       return <div>Loading...</div>;
     }
-
+    if (this.props.stats) {
     return (
       <div className="drink-show">
         <div className="drink-show-item">
@@ -147,7 +150,7 @@ class DrinkShow extends React.Component {
               </div>
             </form>
             <p>
-              {this.props.ratings[0].stats.count || 0}<span> Ratings</span>
+              {this.props.stats.count || 0}<span> Ratings</span>
             </p>
           </div>
 
@@ -207,6 +210,9 @@ class DrinkShow extends React.Component {
         {this.showAllButton()}
       </div>
     );
+  } else {
+    return <div></div>;
+  }
   }
 }
 

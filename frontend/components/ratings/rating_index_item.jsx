@@ -10,6 +10,10 @@ class RatingIndexItem extends React.Component {
     this.state = { updateModalIsOpen: false};
   }
 
+  componentWillMount() {
+    Modal.setAppElement('body');
+  }
+
   checked (value) {
     if (value === this.props.rating.checkin_rating) {
       return "checked";
