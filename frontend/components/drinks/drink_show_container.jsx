@@ -1,17 +1,21 @@
 import { connect } from 'react-redux';
 import DrinkShow from './drink_show';
-import { fetchDrink, deleteDrink } from '../../actions/drink_actions';
-import { fetchRatings } from '../../actions/rating_actions';
+import { fetchDrink, deleteDrink, fetchDrinks }
+  from '../../actions/drink_actions';
+import { fetchRatings, deleteRating } from '../../actions/rating_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   drink: state.drink.drink[ownProps.params.drinkId],
-  ratings: state.rating
+  ratings: state.rating,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchDrink: id => dispatch(fetchDrink(id)),
+  fetchDrink: id => dispatch(fetchDrink({id: id, type: "drink"})),
   fetchRatings: params => dispatch(fetchRatings(params)),
-  deleteDrink: id => dispatch(deleteDrink(id))
+  deleteRating: rating => dispatch(deleteRating(rating)),
+  deleteDrink: id => dispatch(deleteDrink(id)),
+  fetchDrinks: () => dispatch(fetchDrinks())
 });
 
 export default connect(

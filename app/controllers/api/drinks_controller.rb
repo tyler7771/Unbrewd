@@ -7,6 +7,7 @@ class Api::DrinksController < ApplicationController
 
   def show
     @drink = Drink.includes(:roaster).find(params[:id])
+    @stats = Rating.statistics(params[:params], current_user)
   end
 
   def create

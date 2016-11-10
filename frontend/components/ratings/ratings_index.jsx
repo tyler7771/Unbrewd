@@ -30,6 +30,7 @@ class RatingIndex extends React.Component {
   }
 
   render () {
+    debugger
     return (
       <div className="rating-index">
         <div className="finding-drinks">
@@ -41,7 +42,9 @@ class RatingIndex extends React.Component {
               this.props.ratings.map(rating => (
                 <RatingIndexItem
                   key={rating.id}
-                  rating={rating} />
+                  rating={rating}
+                  deleteRating={this.props.deleteRating}
+                  currentUser={this.props.currentUser}/>
               ))
             }
           </ul>

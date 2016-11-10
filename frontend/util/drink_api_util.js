@@ -26,10 +26,11 @@ export const fetchDrinks = success => {
   });
 };
 
-export const fetchDrink = (id, success) => {
+export const fetchDrink = (params, success) => {
   $.ajax({
     method: "GET",
-    url: `api/drinks/${id}`,
+    url: `api/drinks/${params.id}`,
+    data: {params},
     success
   });
 };

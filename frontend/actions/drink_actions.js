@@ -13,9 +13,9 @@ export const fetchDrinks = () => ({
   type: FETCH_DRINKS,
 });
 
-export const fetchDrink = (id) => ({
+export const fetchDrink = (params) => ({
   type: FETCH_DRINK,
-  id
+  params
 });
 
 export const createDrink = (drink) => ({

@@ -17,16 +17,17 @@ class DrinkShow extends React.Component {
   }
 
   componentDidMount() {
+
     this.props.fetchDrink(this.props.params.drinkId);
+  }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
     this.props.fetchRatings({
       type: "drink",
       id: this.props.params.drinkId,
       amount: 15
     });
-  }
-
-  componentWillMount() {
-    Modal.setAppElement('body');
   }
 
   handleDelete(e) {
@@ -51,7 +52,7 @@ class DrinkShow extends React.Component {
   }
 
   showAllButton() {
-    if (this.props.ratings.length == 15) {
+    if (this.props.ratings.length === 15) {
       return (
         <button onClick={() => this.props.fetchRatings({
             type: "drink", id: this.props.params.drinkId})}>
@@ -61,8 +62,46 @@ class DrinkShow extends React.Component {
     }
   }
 
+  checked (value) {
+    if (value === this.props.ratings[0].stats.average_rating) {
+      return "checked";
+    } else {
+      return "";
+    }
+  }
+
+  table () {
+    if (this.props.ratings) {
+      const stats = this.props.ratings[0].stats;
+      return (
+        <table className="drink-statistics">
+          <tbody>
+            <tr>
+              <th className="table-tl">
+                <p className="stat-title">TOTAL</p>
+                <p className="stat-number">{stats.all || 0}</p>
+              </th>
+              <th className="table-tr">
+                <p className="stat-title">UNIQUE</p>
+                <p className="stat-number">{stats.unique || 0}</p>
+              </th>
+            </tr>
+            <tr>
+              <th className="table-bl"></th>
+              <th>
+                <p className="stat-title">YOU</p>
+                <p className="user-stat-number">{stats.user || 0}</p>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      );
+    }
+  }
+
   render () {
     const drink = this.props.drink;
+
     if (!drink) {
       return <div>Loading...</div>;
     }
@@ -79,28 +118,8 @@ class DrinkShow extends React.Component {
                 {drink.roaster.name}
               </p>
             </div>
+            {this.table()}
 
-            <table className="drink-statistics">
-              <tbody>
-                <tr>
-                  <th className="table-tl">
-                    <p className="stat-title">TOTAL</p>
-                    <p className="stat-number">0</p>
-                  </th>
-                  <th className="table-tr">
-                    <p className="stat-title">UNIQUE</p>
-                    <p className="stat-number">0</p>
-                  </th>
-                </tr>
-                <tr>
-                  <th className="table-bl"></th>
-                  <th>
-                    <p className="stat-title">YOU</p>
-                    <p className="user-stat-number">0</p>
-                  </th>
-                </tr>
-              </tbody>
-            </table>
           </div>
 
           <div className="drink-details">
@@ -109,26 +128,26 @@ class DrinkShow extends React.Component {
             </p>
             <form id="ratingsForm">
               <div className="beans">
-                  <input type="radio" name="bean"
-                    className="bean-1" id="bean-1"/>
+                  <input type="radio" name="bean" checked={this.checked(1)}
+                    className="bean-1" id="bean-1" readOnly/>
                   <label className="bean-1" htmlFor="bean-1">1</label>
-                  <input type="radio" name="bean"
-                    className="bean-2" id="bean-2"/>
+                  <input type="radio" name="bean" checked={this.checked(2)}
+                    className="bean-2" id="bean-2" readOnly/>
                   <label className="bean-2" htmlFor="bean-2">2</label>
-                  <input type="radio" name="bean"
-                    className="bean-3" id="bean-3"/>
+                  <input type="radio" name="bean" checked={this.checked(3)}
+                    className="bean-3" id="bean-3" readOnly/>
                   <label className="bean-3" htmlFor="bean-3">3</label>
-                  <input type="radio" name="bean"
-                    className="bean-4" id="bean-4"/>
+                  <input type="radio" name="bean" checked={this.checked(4)}
+                    className="bean-4" id="bean-4" readOnly/>
                   <label className="bean-4" htmlFor="bean-4">4</label>
-                  <input type="radio" name="bean"
-                    className="bean-5" id="bean-5"/>
+                  <input type="radio" name="bean" checked={this.checked(5)}
+                    className="bean-5" id="bean-5" readOnly/>
                   <label className="bean-5" htmlFor="bean-5">5</label>
                   <span></span>
               </div>
             </form>
             <p>
-              0<span> Ratings</span>
+              {this.props.ratings[0].stats.count || 0}<span> Ratings</span>
             </p>
           </div>
 
@@ -179,7 +198,9 @@ class DrinkShow extends React.Component {
             this.props.ratings.map(rating => (
               <RatingIndexItem
                 key={rating.id}
-                rating={rating} />
+                rating={rating}
+                deleteRating={this.props.deleteRating}
+                currentUser={this.props.currentUser} />
             ))
           }
         </ul>
