@@ -42,7 +42,7 @@ class ProfileUpdateModal extends React.Component {
 
   previewProfileImage() {
     if (this.state.picture_url !== "") {
-      return <img src={this.state.picture_url} className="modal-img"/>;
+      return <img src={this.state.picture_url} className="profile-modal-img"/>;
     }
   }
 
@@ -55,7 +55,7 @@ class ProfileUpdateModal extends React.Component {
   render () {
     return (
       <div className="drink-form-box">
-        <h1>Update Drink</h1>
+        <h1>Update Profile</h1>
           {this.renderErrors()}
           <form onSubmit={this.handleSubmit} className="drink-form">
             <input type="text"

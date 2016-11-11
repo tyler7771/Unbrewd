@@ -11,6 +11,8 @@ import DrinkFormContainer from './drinks/drink_form_container';
 import RatingIndexContainer from './ratings/ratings_index_container';
 import Recent from './profiles/recent_container';
 import { fetchDrinks } from '../actions/drink_actions';
+import { fetchProfile } from '../actions/profile_actions';
+import { fetchRatings } from '../actions/rating_actions';
 
 const Root = ({ store }) => {
 
@@ -18,11 +20,33 @@ const Root = ({ store }) => {
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
       replace('/welcome');
+    } else {
+      store.dispatch(fetchProfile({
+        id: window.currentUser.id,
+        type: "user"
+      }));
+      store.dispatch(fetchRatings({
+        type: "user",
+        id: window.currentUser.id,
+        amount: 20
+      }));
     }
   };
 
   const drinkIndex = () => {
     store.dispatch(fetchDrinks());
+  };
+
+  const getRatings = () => {
+    store.dispatch(fetchProfile({
+      id: window.currentUser.id,
+      type: "user"
+    }));
+    store.dispatch(fetchRatings({
+      type: "user",
+      id: window.currentUser.id,
+      amount: 20
+    }));
   };
 
   return (

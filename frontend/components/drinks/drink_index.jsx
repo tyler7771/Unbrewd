@@ -12,18 +12,6 @@ class DrinkIndex extends React.Component {
     this.props.fetchDrinks();
   }
 
-  sortedItems(){
-    let order = this.state.sortOrder;
-    let sorted = this.props.drinks.sort(function(a, b) {
-        if (a[order] < b[order]) {
-          return -1;
-        } else {
-          return 1;
-        }
-      });
-    return sorted;
-  }
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -42,6 +30,21 @@ class DrinkIndex extends React.Component {
             <a href="/#/new">Add it to our list!</a>
         </span>
 
+        <div className="sort">
+          <h3>Sort by: </h3>
+          <div className="select-style">
+            <select
+              className="coffee-sort">
+              <option value="name">Coffee Name A-Z</option>
+              <option value="name">Coffee Name Z-A</option>
+              <option value="Medium-Light">Roaster A-Z</option>
+              <option value="Medium-Light">Roaster Z-A</option>
+              <option value="roast_type">Roast Type</option>
+            </select>
+          </div>
+        </div>
+
+
         </div>
         <ul>
             {
@@ -59,22 +62,3 @@ class DrinkIndex extends React.Component {
 }
 
 export default DrinkIndex;
-
-
-// <div className="sort">
-//   <h2>Sort by: </h2>
-//   <div className="select-style">
-//     <select
-//       className="coffee-sort"
-//       value={this.state.sortOrder}
-//       onChange={this.update("sortOrder")}>
-//       <option value="name">Coffee Name A-Z</option>
-//       <option value="name">Coffee Name Z-A</option>
-//       <option value="Medium-Light">Roaster A-Z</option>
-//       <option value="Medium-Light">Roaster Z-A</option>
-//       <option value="roast_type">Roast Type</option>
-//       <option value="Medium">Highest Rated</option>
-//     </select>
-//   </div>
-// </div>
-//

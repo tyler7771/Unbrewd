@@ -25,6 +25,20 @@ class ProfileShow extends React.Component {
     });
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.params.userId !== newProps.params.userId) {
+      this.props.fetchProfile({
+        id: newProps.params.userId,
+        type: "user"
+      });
+      this.props.fetchRatings({
+        type: "user",
+        id: newProps.params.userId,
+        amount: 15
+      });
+    }
+  }
+
   componentWillMount() {
     Modal.setAppElement('body');
   }

@@ -3,7 +3,7 @@ import RatingIndex from './ratings_index';
 import { fetchRatings, deleteRating } from '../../actions/rating_actions';
 
 const mapStateToProps = state => ({
-  ratings: Object.keys(state.rating).map(id => state.rating[id]),
+  ratings: Object.keys(state.rating).slice().reverse().map(id => state.rating[id]),
   currentUser: state.session.currentUser
 });
 
