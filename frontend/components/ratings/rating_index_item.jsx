@@ -124,8 +124,10 @@ class RatingIndexItem extends React.Component {
             </Link>
           </span>
         {this.ratingView()}
-        {this.imageView()}
         {this.buttons()}
+      </div>
+      <div className="rating-image">
+        {this.imageView()}
 
         <Modal
           className="rating-update-modal"

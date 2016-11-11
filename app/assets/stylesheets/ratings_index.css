@@ -46,6 +46,7 @@
   border-radius: 4px;
   margin-top: 15px;
   position: relative;
+  width: 90%
 }
 
 .drink-index-description {
@@ -137,14 +138,18 @@ form .beans-rating span {
   transition: width 0.5s;
 }
 
-.rating-index-info > img {
+.rating-image > img {
   width: 200px;
   height: 200px;
-  margin-top: 10px;
+  display: block;
+}
+
+.rating-index-info > .drink-crud-buttons {
   display: block;
 }
 
 .rating-index-info > .drink-crud-buttons > a > button{
   margin-top: 10px;
+  margin-right: 10px;
   display: inline;
 }
