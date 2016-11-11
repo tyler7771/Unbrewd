@@ -17,7 +17,7 @@ they can add it. After clicking the link they are redirected to the new drinks
 form. If they need to add a roaster there's a link that opens a modal with the
 roaster form.
 
-![Alt text](http://res.cloudinary.com/dfmvfna21/image/upload/v1478898248/vabi4qzsznl7gbhldrzy.png)
+![Alt text](http://res.cloudinary.com/dfmvfna21/image/upload/v1478900738/Screen_Shot_2016-11-11_at_1.45.07_PM_2_ly5myc.png)
 
 From the Coffee's show page, users have the ability to delete and updated drinks.
 Deleting redirects them back to the all coffee's page. If updating, a modal is
