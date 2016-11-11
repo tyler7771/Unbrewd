@@ -6,8 +6,10 @@ import Welcome from './welcome';
 import DrinkIndexContainer from './drinks/drink_index_container';
 import DrinkShowContainer from './drinks/drink_show_container';
 import ProfileShowContainer from './profiles/profile_container';
+import HistoryContainer from './profiles/history_container';
 import DrinkFormContainer from './drinks/drink_form_container';
 import RatingIndexContainer from './ratings/ratings_index_container';
+import Recent from './profiles/recent_container';
 import { fetchDrinks } from '../actions/drink_actions';
 
 const Root = ({ store }) => {
@@ -19,13 +21,6 @@ const Root = ({ store }) => {
     }
   };
 
-  const _redirectIfLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser;
-    if (currentUser) {
-      replace('/');
-    }
-  };
-
   const drinkIndex = () => {
     store.dispatch(fetchDrinks());
   };
@@ -34,12 +29,14 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App} onEnter={_ensureLoggedIn}>
+          <IndexRoute component={Recent}/>
           <Route path="/global" component={RatingIndexContainer} />
           <Route path="/new" component={DrinkFormContainer} />
           <Route path="/update/:drinkid" component={DrinkFormContainer} />
           <Route path="/coffee" component={DrinkIndexContainer} onEnter={drinkIndex}/>
           <Route path="/coffee/:drinkId" component={DrinkShowContainer} />
           <Route path="/user/:userId" component={ProfileShowContainer} />
+          <Route path="/history/:userId" component={HistoryContainer} />
         </Route>
         <Route path="/welcome" component={Welcome} />
       </Router>

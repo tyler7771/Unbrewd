@@ -104,7 +104,9 @@ class RatingIndexItem extends React.Component {
     let rating = this.props.rating;
     return (
       <li className="rating-index-item">
-        <img className="user-pic" src={this.props.rating.user.picture_url} />
+        <Link to={`/user/${rating.user.id}`}>
+          <img className="user-pic" src={this.props.rating.user.picture_url} />
+        </Link>
         <div className="rating-index-info">
           <span>
             <Link to={`/user/${rating.user.id}`} className="rating-link">

@@ -33,18 +33,16 @@ class Rating < ActiveRecord::Base
       return {all: 0, user: 0, unique: 0, average_rating: 0, count: 0}
     else
       ratings = self.find_by_params(params)
-      # debugger
-      all = ratings.length
-
-      user_statistic = ratings.select { |rating| rating.user.username == current_user.username }
-      user_stat = user_statistic.length
-
-      unique = ratings.count("DISTINCT user_id")
-
       if params[:type] == "drink"
+        all = ratings.length
+
+        user_statistic = ratings.select { |rating| rating.user.username == current_user.username }
+        user_stat = user_statistic.length
+
+        unique = ratings.count("DISTINCT user_id")
+
         sum = 0
         count = 0
-
         ratings.each do |rating|
           unless rating.checkin_rating.nil? || rating.checkin_rating == 0
             sum += rating.checkin_rating
@@ -57,7 +55,11 @@ class Rating < ActiveRecord::Base
         else
           average = sum / count
         end
+      else
+        all = ratings.length
+        unique = ratings.count("DISTINCT drink_id")
       end
+
       return {all: all, user: user_stat, unique: unique, average_rating: average, count: count}
     end
   end

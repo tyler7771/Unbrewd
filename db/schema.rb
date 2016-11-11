@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109003849) do
+ActiveRecord::Schema.define(version: 20161111010521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20161109003849) do
     t.datetime "created_at",                                                                                                                           null: false
     t.datetime "updated_at",                                                                                                                           null: false
     t.string   "picture_url",     default: "http://res.cloudinary.com/dfmvfna21/image/upload/v1478198648/249903173ee16b3346ba320a24e56a8b_quwrxc.jpg"
+    t.string   "cover_photo_url", default: "http://res.cloudinary.com/dfmvfna21/image/upload/v1478825954/igfidzbaz4hiemcr3ez1.jpg"
   end
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree

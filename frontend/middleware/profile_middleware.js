@@ -11,7 +11,9 @@ import {
 import { hashHistory } from 'react-router';
 
 const ProfilesMiddleware = ({ getState, dispatch }) => next => action => {
-  let fetchProfileSuccess = profile => dispatch(receiveProfile(profile));
+  let fetchProfileSuccess = profile => {
+    dispatch(receiveProfile(profile));
+  };
 
   switch (action.type) {
     case FETCH_PROFILE:
@@ -19,6 +21,7 @@ const ProfilesMiddleware = ({ getState, dispatch }) => next => action => {
       return next(action);
     case UPDATE_PROFILE:
       updateProfile(action.profile, fetchProfileSuccess);
+      return next(action);
     default:
       next(action);
   }

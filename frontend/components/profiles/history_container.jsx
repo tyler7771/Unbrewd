@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
-import ProfileShow from './profile';
+import CoffeeHistory from './history';
 import { fetchProfile } from '../../actions/profile_actions';
 import { fetchRatings, deleteRating } from '../../actions/rating_actions';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => {
+  // debugger
+  return {
   user: state.profile.profile,
   ratings: state.rating,
   stats: state.profile.profile ? state.profile.profile.stats : {},
   currentUser: state.session.currentUser
-});
+};
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchProfile: params => dispatch(fetchProfile(params)),
@@ -19,4 +22,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProfileShow);
+)(CoffeeHistory);
