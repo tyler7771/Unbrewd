@@ -19,10 +19,10 @@ const Header = ({currentUser, logout}) => {
         <div className="user-button">
           <img src={currentUser.picture_url} />
           <ul className="user-dropdown">
-            <li><Link to="/">Recent Activity</Link></li>
-            <li><Link to={`/user/${currentUser.id}`}>Profile</Link></li>
-            <li><Link to={`/history/${currentUser.id}`}>Coffee History</Link></li>
-            <li onClick={logout}>Logout</li>
+            <a href="/#/"><li>Recent Activity</li></a>
+            <a href={`/#/user/${currentUser.id}`}><li>Profile</li></a>
+            <a href={`/#/history/${currentUser.id}`}><li>Coffee History</li></a>
+            <a><li onClick={logout}>Logout</li></a>
           </ul>
         </div>
         <input type="text" className="search-bar" value="" />
