@@ -19,7 +19,6 @@ class Rating < ActiveRecord::Base
   end
 
   def self.find_by_params(params)
-    debugger
     if params[:type] == "drink"
       Drink.find_by(id: params[:id]).ratings
     elsif params[:type] == "user"
