@@ -8,7 +8,6 @@ class Rating < ActiveRecord::Base
 
     if params[:amount] && @ratings.length >= params[:amount].to_i
       if params[:type]
-        # debugger
         return @ratings.includes(:user, :drink).to_a.slice(-params[:amount].to_i..-1)
       else
         ratings =  @ratings.includes(:user, :drink).shuffle.slice(0, params[:amount].to_i)

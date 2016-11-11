@@ -36,7 +36,7 @@ class Api::RatingsController < ApplicationController
   def destroy
     @rating = Rating.find(params[:id])
     @rating.destroy
-    render :json => {}
+    render :json => @rating
   end
 
   private

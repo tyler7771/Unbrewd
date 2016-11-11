@@ -13,25 +13,17 @@ class RecentActivity extends React.Component {
     this.closeUpdateModal = this.closeUpdateModal.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchProfile({
-      id: window.currentUser.id,
-      type: "user"
-    });
-    this.props.fetchRatings({
-      type: "user",
-      id: window.currentUser.id,
-      amount: 20
-    });
-  }
-
-  componentWillReceiveProps(newProps) {
-    newProps.fetchRatings({
-      type: "user",
-      id: window.currentUser.id,
-      amount: 20
-    });
-  }
+  // componentDidMount() {
+  //   this.props.fetchProfile({
+  //     id: window.currentUser.id,
+  //     type: "user"
+  //   });
+  //   this.props.fetchRatings({
+  //     type: "user",
+  //     id: window.currentUser.id,
+  //     amount: 20
+  //   });
+  // }
 
   componentWillMount() {
     Modal.setAppElement('body');

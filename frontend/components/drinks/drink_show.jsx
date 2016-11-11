@@ -28,17 +28,17 @@ class DrinkShow extends React.Component {
     });
   }
 
-  componentWillReceiveProps(newProps) {
-    this.props.fetchDrink({
-      id: newProps.params.drinkId,
-      type: "drink",
-    });
-    this.props.fetchRatings({
-      type: "drink",
-      id: newProps.params.drinkId,
-      amount: 15
-    });
-  }
+  // componentWillReceiveProps(newProps) {
+  //   this.props.fetchDrink({
+  //     id: newProps.params.drinkId,
+  //     type: "drink",
+  //   });
+  //   this.props.fetchRatings({
+  //     type: "drink",
+  //     id: newProps.params.drinkId,
+  //     amount: 15
+  //   });
+  // }
 
   componentWillMount() {
     Modal.setAppElement('body');

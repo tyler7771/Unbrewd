@@ -5,7 +5,7 @@ import { fetchRatings, deleteRating } from '../../actions/rating_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   user: state.profile.profile,
-  ratings: state.rating,
+  ratings: state.rating.slice().reverse(),
   stats: state.profile.profile ? state.profile.profile.stats : {},
   currentUser: state.session.currentUser
 });

@@ -30,21 +30,6 @@ class DrinkIndex extends React.Component {
             <a href="/#/new">Add it to our list!</a>
         </span>
 
-        <div className="sort">
-          <h3>Sort by: </h3>
-          <div className="select-style">
-            <select
-              className="coffee-sort">
-              <option value="name">Coffee Name A-Z</option>
-              <option value="name">Coffee Name Z-A</option>
-              <option value="Medium-Light">Roaster A-Z</option>
-              <option value="Medium-Light">Roaster Z-A</option>
-              <option value="roast_type">Roast Type</option>
-            </select>
-          </div>
-        </div>
-
-
         </div>
         <ul>
             {
@@ -62,3 +47,17 @@ class DrinkIndex extends React.Component {
 }
 
 export default DrinkIndex;
+
+// <div className="sort">
+//   <h3>Sort by: </h3>
+//   <div className="select-style">
+//     <select
+//       className="coffee-sort">
+//       <option value="name">Coffee Name A-Z</option>
+//       <option value="name">Coffee Name Z-A</option>
+//       <option value="Medium-Light">Roaster A-Z</option>
+//       <option value="Medium-Light">Roaster Z-A</option>
+//       <option value="roast_type">Roast Type</option>
+//     </select>
+//   </div>
+// </div>

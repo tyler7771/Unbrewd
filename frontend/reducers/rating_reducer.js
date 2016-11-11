@@ -17,10 +17,11 @@ const DrinksReducer = (oldState = [], action) => {
       return merge([], oldState, action.rating);
     case REMOVE_RATING:
       let newState = merge([], oldState);
-      let removedRating = _.find(newState, {id: action.rating.id});
-
-      if( removedRating ) {
-        newState = _.without(newState, removedRating);
+      for (let i = 0; i < newState.length; i++) {
+        if (newState[i] === undefined) {continue;}
+        else if  (newState[i].id === action.rating.id) {
+          newState.splice(i, 1);
+        }
       }
       return newState;
     case RECEIVE_ERRORS:
