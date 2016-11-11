@@ -67,8 +67,14 @@ class RatingIndexItem extends React.Component {
           </form>
         </div>
       );
-    } else {
-      return (<br/>);
+    } else if (this.props.rating.description) {
+      return (
+        <div className="rating-details">
+          <p className="drink-index-description">
+            {this.props.rating.description}
+          </p>
+        </div>
+      );
     }
   }
 

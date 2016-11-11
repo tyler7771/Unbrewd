@@ -40,6 +40,18 @@ class ProfileUpdateModal extends React.Component {
     }
   }
 
+  previewProfileImage() {
+    if (this.state.picture_url !== "") {
+      return <img src={this.state.picture_url} className="modal-img"/>;
+    }
+  }
+
+  previewCoverImage() {
+    if (this.state.picture_url !== "") {
+      return <img src={this.state.cover_photo_url} className="modal-img"/>;
+    }
+  }
+
   render () {
     return (
       <div className="drink-form-box">
@@ -50,6 +62,7 @@ class ProfileUpdateModal extends React.Component {
               className="coffee-create-name"
               value={this.state.username}
               onChange={this.update("username")} />
+            {this.previewProfileImage()}
               <button
                 onClick={(e) => {
                   e.preventDefault();
@@ -61,6 +74,7 @@ class ProfileUpdateModal extends React.Component {
                         }.bind(this));}}>
                 Upload Profile Photo
               </button>
+              {this.previewCoverImage()}
               <button
                 onClick={(e) => {
                   e.preventDefault();
