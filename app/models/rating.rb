@@ -30,7 +30,7 @@ class Rating < ActiveRecord::Base
   end
 
   def self.statistics(params, current_user, type)
-    if type != "get" && type != "update"
+    if type == "create"
       return {all: 0, user: 0, unique: 0, average_rating: 0, count: 0}
     else
       ratings = self.find_by_params(params)

@@ -18,8 +18,13 @@ class SidebarStats extends React.Component {
       return (
         <div className="sidebar-stats">
           <div className="sidebar-user">
-            <img className="sidebar-image" src={this.props.currentUser.picture_url} />
-            <h1 className="sidebar-username">{this.props.currentUser.username}</h1>
+            <a href={`/#/user/${this.props.currentUser.id}`}>
+              <img className="sidebar-image"
+                src={this.props.currentUser.picture_url} />
+            </a>
+            <h1 className="sidebar-username">
+              {this.props.currentUser.username}
+            </h1>
           </div>
 
           <div className="sidebar-user-stats">

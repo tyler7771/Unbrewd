@@ -8,10 +8,6 @@ class RatingIndex extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchRatings({amount: 20});
-  }
-
   sortedItems(){
     let order = this.state.sortOrder;
     let sorted = this.props.ratings.sort(function(a, b) {
@@ -47,7 +43,8 @@ class RatingIndex extends React.Component {
                   key={rating.id}
                   rating={rating}
                   deleteRating={this.props.deleteRating}
-                  currentUser={this.props.currentUser}/>
+                  currentUser={this.props.currentUser}
+                  />
               ))
             }
           </ul>

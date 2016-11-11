@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update_attributes(user_params)
-      @stats = Rating.statistics(params[:params], @user, "update")
+      @stats = Rating.statistics({id: @user.id, type: "user"}, current_user, "update")
       render :show
     else
       render :json => { :errors => @user.errors.full_messages }, :status => 422

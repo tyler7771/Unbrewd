@@ -92,7 +92,9 @@ class RatingIndexItem extends React.Component {
     if (this.props.rating.user.username === this.props.currentUser.username) {
       return (
         <div className="drink-crud-buttons">
-          <a onClick={() => this.props.deleteRating(this.props.rating.id)}>
+          <a onClick={() => {
+              this.props.deleteRating(this.props.rating.id);
+          }}>
           <button>
             Delete
           </button></a>
