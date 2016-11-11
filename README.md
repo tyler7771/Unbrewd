@@ -25,9 +25,6 @@ opened and pre-filled with the coffee's current information.
 
 ![Alt text](http://res.cloudinary.com/dfmvfna21/image/upload/v1478898392/Screen_Shot_2016-11-11_at_1.05.44_PM_2_npvgex.png)
 
-![Alt text](http://res.cloudinary.com/dfmvfna21/image/upload/v1478899402/Screen_Shot_2016-11-11_at_1.22.28_PM_2_evfsgf.png)
-
-
 ### Drink index and show
 
 The "All Coffees" page is a list of all the coffee's in the database with a description. Each list item links to the coffee's show page.
