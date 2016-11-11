@@ -28,6 +28,18 @@ class DrinkShow extends React.Component {
     });
   }
 
+  componentWillReceiveProps(newProps) {
+    this.props.fetchDrink({
+      id: newProps.params.drinkId,
+      type: "drink",
+    });
+    this.props.fetchRatings({
+      type: "drink",
+      id: newProps.params.drinkId,
+      amount: 15
+    });
+  }
+
   componentWillMount() {
     Modal.setAppElement('body');
   }
@@ -35,6 +47,11 @@ class DrinkShow extends React.Component {
   handleDelete(e) {
     e.preventDefault();
     this.props.deleteDrink(this.props.params.drinkId);
+    this.props.fetchRatings({
+      type: "drink",
+      id: this.props.params.drinkId,
+      amount: 15
+    });
   }
 
   openUpdateModal() {

@@ -43,8 +43,6 @@ const Root = ({ store }) => {
       type: "user"
     }));
     store.dispatch(fetchRatings({
-      type: "user",
-      id: window.currentUser.id,
       amount: 20
     }));
   };
@@ -54,7 +52,7 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path="/" component={App} onEnter={_ensureLoggedIn}>
           <IndexRoute component={Recent}/>
-          <Route path="/global" component={RatingIndexContainer} />
+          <Route path="/global" component={RatingIndexContainer} onEnter={getRatings}/>
           <Route path="/new" component={DrinkFormContainer} />
           <Route path="/update/:drinkid" component={DrinkFormContainer} />
           <Route path="/coffee" component={DrinkIndexContainer} onEnter={drinkIndex}/>

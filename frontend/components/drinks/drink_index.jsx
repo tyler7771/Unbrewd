@@ -8,8 +8,8 @@ class DrinkIndex extends React.Component {
     super(props);
   }
 
-  componentWillReceiveProps() {
-    this.props.fetchDrinks();
+  componentWillReceiveProps(newProps) {
+    newProps.fetchDrinks();
   }
 
   update(field) {

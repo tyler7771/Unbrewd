@@ -25,6 +25,14 @@ class RecentActivity extends React.Component {
     });
   }
 
+  componentWillReceiveProps(newProps) {
+    newProps.fetchRatings({
+      type: "user",
+      id: window.currentUser.id,
+      amount: 20
+    });
+  }
+
   componentWillMount() {
     Modal.setAppElement('body');
   }
@@ -58,7 +66,8 @@ class RecentActivity extends React.Component {
                   key={rating.id}
                   rating={rating}
                   deleteRating={this.props.deleteRating}
-                  currentUser={this.props.currentUser} />
+                  currentUser={this.props.currentUser}
+                  />
               ))
             }
           </ul>
