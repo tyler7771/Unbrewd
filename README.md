@@ -25,7 +25,7 @@ opened and pre-filled with the coffee's current information.
 
 ![Alt text](http://res.cloudinary.com/dfmvfna21/image/upload/v1478898392/Screen_Shot_2016-11-11_at_1.05.44_PM_2_npvgex.png)
 
-### Drink index and show
+#### Drink index and show
 
 The "All Coffees" page is a list of all the coffee's in the database with a description. Each list item links to the coffee's show page.
 
@@ -199,18 +199,18 @@ the number of coffees reviewed and individual roasts tried. This is calculated t
 
 If it is the current user's page, there is a button to update their information.
 
-### Future Additions to the Site
+## Future Additions to the Site
 
-## Searching and Sorting
+### Searching and Sorting
 
 Add a search bar to search for users and coffees in the database. Sort the different feeds so that finding information of the different pages is easier.
 
-## Top Rated
+### Top Rated
 
 Add a top rated list for coffees and then a top rated for each individual
 user. So users can see what's most popular and what other users like best.
 
-## Comments, Tags, and Cheers
+### Comments, Tags, and Cheers
 
 I'd like to add the ability to comment, tag, and add cheers to checkin's so the
 site's a little more social.
