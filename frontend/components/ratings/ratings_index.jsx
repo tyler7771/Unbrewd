@@ -8,17 +8,9 @@ class RatingIndex extends React.Component {
     super(props);
   }
 
-  sortedItems(){
-    let order = this.state.sortOrder;
-    let sorted = this.props.ratings.sort(function(a, b) {
-        if (a[order] < b[order]) {
-          return -1;
-        } else {
-          return 1;
-        }
-      });
-    return sorted;
-  }
+  // componentDidMount() {
+  //   this.props.fetchRatings({amount: 20});
+  // }
 
   update(field) {
     return e => this.setState({

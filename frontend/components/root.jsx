@@ -20,16 +20,6 @@ const Root = ({ store }) => {
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
       replace('/welcome');
-    } else {
-      store.dispatch(fetchProfile({
-        id: window.currentUser.id,
-        type: "user"
-      }));
-      store.dispatch(fetchRatings({
-        type: "user",
-        id: window.currentUser.id,
-        amount: 20
-      }));
     }
   };
 
@@ -39,9 +29,17 @@ const Root = ({ store }) => {
 
   const getRatings = () => {
     store.dispatch(fetchProfile({
-      id: window.currentUser.id,
+      id: store.getState().session.currentUser.id,
       type: "user"
     }));
+    store.dispatch(fetchRatings({
+      type: "user",
+      id: store.getState().session.currentUser.id,
+      amount: 20
+    }));
+  };
+
+  const fetchIndex = () => {
     store.dispatch(fetchRatings({
       amount: 20
     }));
@@ -51,8 +49,8 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App} onEnter={_ensureLoggedIn}>
-          <IndexRoute component={Recent}/>
-          <Route path="/global" component={RatingIndexContainer} onEnter={getRatings}/>
+          <IndexRoute component={Recent} onEnter={getRatings}/>
+          <Route path="/global" component={RatingIndexContainer} onEnter={fetchIndex}/>
           <Route path="/new" component={DrinkFormContainer} />
           <Route path="/update/:drinkid" component={DrinkFormContainer} />
           <Route path="/coffee" component={DrinkIndexContainer} onEnter={drinkIndex}/>
