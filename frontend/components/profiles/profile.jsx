@@ -53,6 +53,16 @@ class ProfileShow extends React.Component {
     }
   }
 
+  updateButton() {
+    if (window.currentUser.id === this.props.user.id) {
+      return (
+        <a><button onClick={() => this.openUpdateModal()}>
+          Update
+        </button></a>
+    );
+    }
+  }
+
   render () {
     let user = this.props.user;
     if (!user) {
@@ -66,9 +76,7 @@ class ProfileShow extends React.Component {
           </div>
           <div className="profile-user-details">
             <h1 className="profile-name">{this.name(user.username)}</h1>
-            <a><button onClick={() => this.openUpdateModal()}>
-              Update
-            </button></a>
+            {this.updateButton()}
             <img className="profile-pic" src={user.picture_url} />
             <div className="profile-stats">
               <div className="profile-stat">
