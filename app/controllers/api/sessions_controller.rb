@@ -11,6 +11,8 @@ class Api::SessionsController < ApplicationController
       render :json => { :errors => ["Username not found"] }, :status => 404
     else
       sign_in(@user)
+      params = {id: @user.id, type: "user"}
+      @stats = Rating.statistics(params, @user, "get")
       render './api/users/show'
     end
   end
