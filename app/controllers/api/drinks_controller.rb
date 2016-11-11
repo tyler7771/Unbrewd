@@ -24,7 +24,7 @@ class Api::DrinksController < ApplicationController
     @drink = Drink.find(params[:id])
 
     if @drink.update_attributes(drink_params)
-      @stats = Rating.statistics(params[:params], current_user, "update")
+      @stats = Rating.statistics({id: @drink.id, type: "drink"}, current_user, "update")
       render :show
     else
       render :json => { :errors => @drink.errors.full_messages }, :status => 422

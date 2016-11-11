@@ -8,20 +8,21 @@ class Rating < ActiveRecord::Base
 
     if params[:amount] && @ratings.length >= params[:amount].to_i
       if params[:type]
-        return @ratings.includes(:user, :drink).reverse.slice(0, params[:amount].to_i)
+        # debugger
+        return @ratings.includes(:user, :drink).to_a.slice(-params[:amount].to_i..-1)
       else
-        ratings =  @ratings.includes(:user, :drink).shuffle.reverse.slice(0, params[:amount].to_i)
+        ratings =  @ratings.includes(:user, :drink).shuffle.slice(0, params[:amount].to_i)
         return ratings
       end
     else
-      return @ratings.includes(:user, :drink).reverse
+      return @ratings.includes(:user, :drink)
     end
   end
 
   def self.find_by_params(params)
-    if params[:type] == "drink"
+    if params && params[:type] == "drink"
       Drink.find_by(id: params[:id]).ratings
-    elsif params[:type] == "user"
+    elsif params && params[:type] == "user"
       return User.find_by(id: params[:id]).ratings
     else
       return Rating.all
@@ -29,11 +30,11 @@ class Rating < ActiveRecord::Base
   end
 
   def self.statistics(params, current_user, type)
-    if type != "get"
+    if type != "get" && type != "update"
       return {all: 0, user: 0, unique: 0, average_rating: 0, count: 0}
     else
       ratings = self.find_by_params(params)
-      if params[:type] == "drink"
+      if params || params[:type] == "drink"
         all = ratings.length
 
         user_statistic = ratings.select { |rating| rating.user.username == current_user.username }

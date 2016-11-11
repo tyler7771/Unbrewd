@@ -64,7 +64,7 @@ class CheckInModal extends React.Component {
           <form onSubmit={this.handleSubmit} className="checkin-form">
             <textarea
   						className="coffee-create-description"
-  						placeholder="Coffee Description"
+  						placeholder="Tell us about your experience with this coffee!"
   						value={this.state.description}
   						onChange={this.update("description")} />
             <div className="beans-form-checkin">

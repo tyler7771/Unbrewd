@@ -75,3 +75,10 @@ form .beans-form-checkin span {
   width: 280px;
   align-self: center;
 }
+
+.profile-modal-img {
+  margin-top: 10px;
+  width: 280px;
+  align-self: center;
+  border-radius: 50%;
+}

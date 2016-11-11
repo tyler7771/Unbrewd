@@ -6,7 +6,7 @@ import { fetchRatings, deleteRating } from '../../actions/rating_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   drink: state.drink.drink[ownProps.params.drinkId],
-  ratings: state.rating,
+  ratings: state.rating.slice().reverse(),
   stats: state.drink.drink[ownProps.params.drinkId] ?
     state.drink.drink[ownProps.params.drinkId].stats : {},
   currentUser: state.session.currentUser

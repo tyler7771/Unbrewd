@@ -11,7 +11,6 @@ const Header = ({currentUser, logout}) => {
         </Link>
         <ul className="nav-links">
           <li><Link to="/global">The Roast</Link></li>
-          <li><Link to="/">Top Rated</Link></li>
           <li><Link to="/coffee">All Coffees</Link></li>
         </ul>
         </div>
@@ -25,7 +24,6 @@ const Header = ({currentUser, logout}) => {
             <a><li onClick={logout}>Logout</li></a>
           </ul>
         </div>
-        <input type="text" className="search-bar" value="" />
         </div>
       </div>
     </header>
@@ -33,3 +31,5 @@ const Header = ({currentUser, logout}) => {
 };
 
 export default Header;
+
+// <input type="text" className="search-bar" value="" />
