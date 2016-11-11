@@ -109,110 +109,110 @@ class DrinkShow extends React.Component {
       return <div>Loading...</div>;
     }
     if (this.props.stats) {
-    return (
-      <div className="drink-show">
-        <div className="drink-show-item">
-          <div className="snapshot">
-            <img className="drink-show-image" src={drink.roaster.picture_url} />
+      return (
+        <div className="drink-show">
+          <div className="drink-show-item">
+            <div className="snapshot">
+              <img className="drink-show-image" src={drink.roaster.picture_url} />
 
-            <div className="drink-show-snapshot">
-              <h1 className="drink-show-title">{drink.name}</h1>
-              <p className="drink-show-roaster">
-                {drink.roaster.name}
+              <div className="drink-show-snapshot">
+                <h1 className="drink-show-title">{drink.name}</h1>
+                <p className="drink-show-roaster">
+                  {drink.roaster.name}
+                </p>
+              </div>
+              {this.table()}
+
+            </div>
+
+            <div className="drink-details">
+              <p className="drink-show-roast-type">
+                <span>Roast Type: </span>{drink.roast_type}
+              </p>
+              <form id="ratingsForm">
+                <div className="beans">
+                    <input type="radio" name="bean" checked={this.checked(1)}
+                      className="bean-1" id="bean-1" readOnly/>
+                    <label className="bean-1" htmlFor="bean-1">1</label>
+                    <input type="radio" name="bean" checked={this.checked(2)}
+                      className="bean-2" id="bean-2" readOnly/>
+                    <label className="bean-2" htmlFor="bean-2">2</label>
+                    <input type="radio" name="bean" checked={this.checked(3)}
+                      className="bean-3" id="bean-3" readOnly/>
+                    <label className="bean-3" htmlFor="bean-3">3</label>
+                    <input type="radio" name="bean" checked={this.checked(4)}
+                      className="bean-4" id="bean-4" readOnly/>
+                    <label className="bean-4" htmlFor="bean-4">4</label>
+                    <input type="radio" name="bean" checked={this.checked(5)}
+                      className="bean-5" id="bean-5" readOnly/>
+                    <label className="bean-5" htmlFor="bean-5">5</label>
+                    <span></span>
+                </div>
+              </form>
+              <p>
+                {this.props.stats.count || 0}<span> Ratings</span>
               </p>
             </div>
-            {this.table()}
 
-          </div>
+            <div className="drink-description">
+              <p><span>Description: </span>{drink.description}</p>
 
-          <div className="drink-details">
-            <p className="drink-show-roast-type">
-              <span>Roast Type: </span>{drink.roast_type}
-            </p>
-            <form id="ratingsForm">
-              <div className="beans">
-                  <input type="radio" name="bean" checked={this.checked(1)}
-                    className="bean-1" id="bean-1" readOnly/>
-                  <label className="bean-1" htmlFor="bean-1">1</label>
-                  <input type="radio" name="bean" checked={this.checked(2)}
-                    className="bean-2" id="bean-2" readOnly/>
-                  <label className="bean-2" htmlFor="bean-2">2</label>
-                  <input type="radio" name="bean" checked={this.checked(3)}
-                    className="bean-3" id="bean-3" readOnly/>
-                  <label className="bean-3" htmlFor="bean-3">3</label>
-                  <input type="radio" name="bean" checked={this.checked(4)}
-                    className="bean-4" id="bean-4" readOnly/>
-                  <label className="bean-4" htmlFor="bean-4">4</label>
-                  <input type="radio" name="bean" checked={this.checked(5)}
-                    className="bean-5" id="bean-5" readOnly/>
-                  <label className="bean-5" htmlFor="bean-5">5</label>
-                  <span></span>
+              <div className="drink-crud-buttons">
+                <a><button onClick={() => this.openUpdateModal()}>
+                  Update
+                </button></a>
+                <a><button onClick={this.handleDelete}>
+                  Delete
+                </button></a>
+                <a><button onClick={() => this.openCheckInModal()}>
+                  Check-In
+                </button></a>
               </div>
-            </form>
-            <p>
-              {this.props.stats.count || 0}<span> Ratings</span>
-            </p>
-          </div>
-
-          <div className="drink-description">
-            <p><span>Description: </span>{drink.description}</p>
-
-            <div className="drink-crud-buttons">
-              <a><button onClick={() => this.openUpdateModal()}>
-                Update
-              </button></a>
-              <a><button onClick={this.handleDelete}>
-                Delete
-              </button></a>
-              <a><button onClick={() => this.openCheckInModal()}>
-                Check-In
-              </button></a>
             </div>
           </div>
+
+          <Modal
+            className="update-modal"
+            isOpen={this.state.updateModalIsOpen}
+            onRequestClose={this.closeUpdateModal}
+            >
+
+            <UpdateModalContainer drink={drink}
+              closeModal={this.closeUpdateModal}/>
+          </Modal>
+
+          <Modal
+            className="check-in-modal"
+            isOpen={this.state.checkInModalIsOpen}
+            onRequestClose={this.closeCheckInModal}
+            >
+
+            <CheckInModalContainer drink={drink}
+              closeModal={this.closeCheckInModal}/>
+          </Modal>
+
+          <div className="finding-drinks">
+              <h1>Recent Global Activity</h1>
+              <h2>Check out what others have to say about this coffee!</h2>
+          </div>
+
+          <ul className="show-ratings">
+            {
+              this.props.ratings.map(rating => (
+                <RatingIndexItem
+                  key={rating.id}
+                  rating={rating}
+                  deleteRating={this.props.deleteRating}
+                  currentUser={this.props.currentUser} />
+              ))
+            }
+          </ul>
+          {this.showAllButton()}
         </div>
-
-        <Modal
-          className="update-modal"
-          isOpen={this.state.updateModalIsOpen}
-          onRequestClose={this.closeUpdateModal}
-          >
-
-          <UpdateModalContainer drink={drink}
-            closeModal={this.closeUpdateModal}/>
-        </Modal>
-
-        <Modal
-          className="check-in-modal"
-          isOpen={this.state.checkInModalIsOpen}
-          onRequestClose={this.closeCheckInModal}
-          >
-
-          <CheckInModalContainer drink={drink}
-            closeModal={this.closeCheckInModal}/>
-        </Modal>
-
-        <div className="finding-drinks">
-            <h1>Recent Global Activity</h1>
-            <h2>Check out what others have to say about this coffee!</h2>
-        </div>
-
-        <ul className="show-ratings">
-          {
-            this.props.ratings.map(rating => (
-              <RatingIndexItem
-                key={rating.id}
-                rating={rating}
-                deleteRating={this.props.deleteRating}
-                currentUser={this.props.currentUser} />
-            ))
-          }
-        </ul>
-        {this.showAllButton()}
-      </div>
-    );
-  } else {
-    return <div></div>;
-  }
+      );
+    } else {
+      return <div></div>;
+    }
   }
 }
 

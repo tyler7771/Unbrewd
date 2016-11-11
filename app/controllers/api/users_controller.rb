@@ -14,6 +14,7 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update_attributes(user_params)
+      @stats = Rating.statistics(params[:params], @user, "update")
       render :show
     else
       render :json => { :errors => @user.errors.full_messages }, :status => 422
@@ -21,13 +22,12 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    debugger
-    @drink = User.find(params[:id])
-    @stats = Rating.statistics(params[:params], current_user)
+    @user = User.find(params[:id])
+    @stats = Rating.statistics(params[:params], @user, "get")
   end
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :picture_url)
+    params.require(:user).permit(:username, :password, :picture_url, :cover_photo_url)
   end
 end

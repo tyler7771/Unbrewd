@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ProfileShow from './profile';
+import RecentActivity from './recent';
 import { fetchProfile } from '../../actions/profile_actions';
 import { fetchRatings, deleteRating } from '../../actions/rating_actions';
 
@@ -19,4 +19,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProfileShow);
+)(RecentActivity);
