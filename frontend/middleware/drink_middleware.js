@@ -37,7 +37,6 @@ const DrinksMiddleware = ({ getState, dispatch }) => next => action => {
       fetchDrinks(fetchAllDrinksSuccess);
       return next(action);
     case FETCH_DRINK:
-      // debugger
       fetchDrink(action.params, fetchDrinkSuccess);
       return next(action);
     case CREATE_DRINK:

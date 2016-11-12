@@ -15,7 +15,6 @@ const DrinksReducer = (oldState = _default, action) => {
     case RECEIVE_ALL_DRINKS:
       return merge({}, oldState, {drink: action.drinks});
     case RECEIVE_DRINK:
-      // debugger
       return merge({}, oldState, {drink: action.drink, errors: []});
     case REMOVE_DRINK:
       let newState = merge({}, oldState);

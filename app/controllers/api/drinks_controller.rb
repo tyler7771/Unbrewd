@@ -1,6 +1,5 @@
 class Api::DrinksController < ApplicationController
   def index
-    # debugger
     @drinks = Drink.includes(:roaster).all
     render :index
   end

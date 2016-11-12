@@ -3,8 +3,9 @@ import React from 'react';
 class RatingUpdateModal extends React.Component {
   constructor(props) {
     super(props);
-    debugger
+
     this.state = {
+      id: this.props.rating.id,
       description: this.props.rating.description,
       picture_url: this.props.rating.picture_url,
       checkin_rating: this.props.rating.checkin_rating
@@ -18,7 +19,7 @@ class RatingUpdateModal extends React.Component {
     const rating = this.state;
     rating.checkin_rating = parseInt(this.state.checkin_rating);
     this.props.updateRating(rating);
-    this.props.closeModal();
+    this.props.closeRatingModal();
   }
 
   update(field) {
@@ -28,7 +29,7 @@ class RatingUpdateModal extends React.Component {
   }
 
   checked (value) {
-    if (value === this.props.rating.checkin_rating) {
+    if (value === parseInt(this.state.checkin_rating)) {
       return "checked";
     } else {
       return "";

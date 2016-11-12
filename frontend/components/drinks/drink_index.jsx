@@ -8,9 +8,9 @@ class DrinkIndex extends React.Component {
     super(props);
   }
 
-  componentWillReceiveProps(newProps) {
-    newProps.fetchDrinks();
-  }
+  // componentWillReceiveProps(newProps) {
+  //   newProps.fetchDrinks();
+  // }
 
   update(field) {
     return e => this.setState({

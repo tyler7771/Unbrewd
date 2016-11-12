@@ -7,6 +7,7 @@ import {
   CREATE_RATING,
   UPDATE_RATING,
   DELETE_RATING,
+  receiveUpdatedRating,
   receiveErrors
 } from '../actions/rating_actions';
 
@@ -23,13 +24,12 @@ const RatingsMiddleware = ({ getState, dispatch }) => next => action => {
   const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
   let fetchAllRatingsSuccess = ratings => dispatch(receiveAllRatings(ratings));
   let fetchRatingSuccess = rating => dispatch(receiveRating(rating));
-  let createRatingSuccess = rating => {
+  let createRatingSuccess = rating => {dispatch(receiveUpdatedRating(rating));
     dispatch(receiveRating(rating));
-    // hashHistory.push(`/coffee/rating/${Object.keys(rating)[0]}`);
   };
-  let removeRatingSuccess = id => {
-    // hashHistory.push("/coffee");
-    dispatch(removeRating(id));
+  let updatedRatingSuccess = rating => dispatch;
+  let removeRatingSuccess = rating => {
+    dispatch(removeRating(rating));
   };
 
   switch (action.type) {
@@ -43,7 +43,7 @@ const RatingsMiddleware = ({ getState, dispatch }) => next => action => {
       createRating(action.rating, createRatingSuccess, errorCallback);
       return next(action);
     case UPDATE_RATING:
-      updateRating(action.rating, fetchRatingSuccess);
+      updateRating(action.rating, updatedRatingSuccess);
       return next(action);
     case DELETE_RATING:
       deleteRating(action.id, removeRatingSuccess);

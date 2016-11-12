@@ -7,7 +7,10 @@ class RatingIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { updateModalIsOpen: false};
+    this.state = { ratingUpdateModalIsOpen: false};
+
+    this.openRatingUpdateModal = this.openRatingUpdateModal.bind(this);
+    this.closeRatingUpdateModal = this.closeRatingUpdateModal.bind(this);
   }
 
   componentWillMount() {
@@ -22,12 +25,12 @@ class RatingIndexItem extends React.Component {
     }
   }
 
-  openUpdateModal() {
-    this.setState({ updateModalIsOpen: true });
+  openRatingUpdateModal() {
+    this.setState({ ratingUpdateModalIsOpen: true });
   }
 
-  closeUpdateModal() {
-    this.setState({ updateModalIsOpen: false });
+  closeRatingUpdateModal() {
+    this.setState({ ratingUpdateModalIsOpen: false });
   }
 
   descriptionView() {
@@ -99,7 +102,7 @@ class RatingIndexItem extends React.Component {
             Delete
           </button></a>
           <a
-            onClick={() => this.openUpdateModal()}>
+            onClick={() => this.openRatingUpdateModal()}>
           <button>
             Update
           </button></a>
@@ -133,12 +136,12 @@ class RatingIndexItem extends React.Component {
 
         <Modal
           className="rating-update-modal"
-          isOpen={this.state.updateModalIsOpen}
-          onRequestClose={this.closeUpdateModal}
+          isOpen={this.state.ratingUpdateModalIsOpen}
+          onRequestClose={this.closeRatingUpdateModal}
           >
 
           <RatingUpdateModalContainer rating={rating}
-            closeModal={this.closeUpdateModal}/>
+            closeRatingUpdateModal={this.closeRatingUpdateModal}/>
         </Modal>
       </div>
     </  li>
