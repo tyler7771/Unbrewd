@@ -3,15 +3,12 @@ import CoffeeHistory from './history';
 import { fetchProfile } from '../../actions/profile_actions';
 import { fetchRatings, deleteRating } from '../../actions/rating_actions';
 
-const mapStateToProps = (state, ownProps) => {
-  // debugger
-  return {
+const mapStateToProps = (state, ownProps) => ({
   user: state.profile.profile,
   ratings: state.rating,
   stats: state.profile.profile ? state.profile.profile.stats : {},
   currentUser: state.session.currentUser
-};
-};
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchProfile: params => dispatch(fetchProfile(params)),

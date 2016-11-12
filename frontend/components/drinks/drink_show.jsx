@@ -12,8 +12,11 @@ class DrinkShow extends React.Component {
     this.state = { updateModalIsOpen: false, checkInModalIsOpen: false };
 
     this.handleDelete = this.handleDelete.bind(this);
+
     this.closeUpdateModal = this.closeUpdateModal.bind(this);
     this.closeCheckInModal = this.closeCheckInModal.bind(this);
+    this.openUpdateModal = this.openUpdateModal.bind(this);
+    this.openCheckInModal = this.openCheckInModal.bind(this);
   }
 
   componentDidMount() {
@@ -27,18 +30,6 @@ class DrinkShow extends React.Component {
       amount: 15
     });
   }
-
-  // componentWillReceiveProps(newProps) {
-  //   this.props.fetchDrink({
-  //     id: newProps.params.drinkId,
-  //     type: "drink",
-  //   });
-  //   this.props.fetchRatings({
-  //     type: "drink",
-  //     id: newProps.params.drinkId,
-  //     amount: 15
-  //   });
-  // }
 
   componentWillMount() {
     Modal.setAppElement('body');
@@ -181,7 +172,7 @@ class DrinkShow extends React.Component {
                 <a><button onClick={this.handleDelete}>
                   Delete
                 </button></a>
-                <a><button onClick={() => this.openCheckInModal()}>
+              <a><button onClick={this.openCheckInModal}>
                   Check-In
                 </button></a>
               </div>

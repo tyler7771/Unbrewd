@@ -8,10 +8,6 @@ class RatingIndex extends React.Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchRatings({amount: 20});
-  // }
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value

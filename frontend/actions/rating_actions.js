@@ -2,11 +2,13 @@ export const FETCH_RATINGS = "FETCH_RATINGS";
 export const FETCH_RATING = "FETCH_RATING";
 export const RECEIVE_ALL_RATINGS = "RECEIVE_ALL_RATINGS";
 export const RECEIVE_RATING = "RECEIVE_RATING";
+export const RECEIVE_UPDATED_RATING = "RECEIVE_UPDATED_RATING";
 export const REMOVE_RATING = "REMOVE_RATING";
 export const CREATE_RATING = "CREATE_RATING";
 export const UPDATE_RATING = "UPDATE_RATING";
 export const DELETE_RATING = "DELETE_RATING";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+
 
 export const fetchRatings = (params) => ({
   type: FETCH_RATINGS,
@@ -51,4 +53,9 @@ export const removeRating = (rating) => ({
 export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
+});
+
+export const receiveUpdatedRating = (rating) => ({
+  type: RECEIVE_UPDATED_RATING,
+  rating
 });

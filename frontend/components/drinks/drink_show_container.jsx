@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import DrinkShow from './drink_show';
 import { fetchDrink, deleteDrink, fetchDrinks }
   from '../../actions/drink_actions';
-import { fetchRatings, deleteRating } from '../../actions/rating_actions';
+import { fetchRatings, deleteRating }
+  from '../../actions/rating_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   drink: state.drink.drink[ownProps.params.drinkId],
