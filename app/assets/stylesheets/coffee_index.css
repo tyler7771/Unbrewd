@@ -54,6 +54,12 @@
         box-shadow: 0 10px 6px -6px #777;
 }
 
+.drink-index-item:hover {
+  -webkit-box-shadow: 0 0 20px #4C2A1E;
+   -moz-box-shadow: 0 0 20px #4C2A1E;
+        box-shadow: 0 0 20px #4C2A1E;
+}
+
 .drink-index-text{
   width: 70%;
 }

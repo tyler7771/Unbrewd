@@ -2,6 +2,7 @@ import React from 'react';
 import DrinkIndexItem from './drink_index_item';
 import DrinkForm from './drink_form';
 import { sortBy } from "lodash";
+import SidebarStatsContainer from '../profiles/sidebar_stats_container';
 
 class DrinkIndex extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class DrinkIndex extends React.Component {
   render () {
     return (
       <div className="drink-index">
+        <SidebarStatsContainer/>
         <div className="finding-drinks">
           <h1>All Our Coffees!</h1>
           <h2>Check out our awesome list of coffees! Click on any coffee

@@ -114,12 +114,6 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-.roaster-modal {
-  position: absolute;
-  top: 41%;
-  left: 42%;
-}
-
 input[type="submit"]:hover {
   background-color: #4C2A1E;
 }

@@ -29,11 +29,11 @@ class SidebarStats extends React.Component {
 
           <div className="sidebar-user-stats">
             <div className="user-stat">
-              <p className="stat-title">TOTAL</p>
+              <p className="stat-title">TOTAL CHECKINS</p>
               <p className="stat-number">{this.props.stats.all || 0}</p>
             </div>
             <div className="user-stat">
-              <p className="stat-title">UNIQUE</p>
+              <p className="stat-title">UNIQUE DRINKS</p>
               <p className="stat-number">{this.props.stats.unique || 0}</p>
             </div>
           </div>

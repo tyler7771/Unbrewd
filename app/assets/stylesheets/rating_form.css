@@ -1,7 +1,24 @@
+.drink-form-box {
+  padding: 10px;
+}
+
+.drink-form-box > h1 {
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+form > button {
+  margin-top: 20px;
+}
+
+form > input[type="submit"] {
+  margin: 10px 0;
+}
+
 form .beans-form-checkin {
   background: url("http://res.cloudinary.com/dfmvfna21/image/upload/v1478303861/bean-sprite_lvuxjl.png") repeat-x 0 0;
   width: 150px;
-  margin: 10px auto 0;
+  margin: 20px auto 0;
 }
 
 form .beans-form-checkin input[type="radio"] {
