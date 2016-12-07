@@ -208,8 +208,8 @@ form .beans span {
   margin: 3px 0;
 }
 
-.update-modal, .check-in-modal, .rating-update-modal {
-  position: absolute;
-  left: 42%;
-  top: 61px;
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

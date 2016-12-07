@@ -37,12 +37,15 @@ class Rating < ActiveRecord::Base
     else
       ratings = self.find_by_params(params)
       if params || params[:type] == "drink"
-        all = ratings.length
+        all = ratings.count
 
         user_statistic = ratings.select { |rating| rating.user.username == current_user.username }
         user_stat = user_statistic.length
-
-        unique = ratings.count("DISTINCT user_id")
+        if params[:type] == "user"
+          unique = ratings.count("DISTINCT drink_id")
+        else
+          unique = ratings.count("DISTINCT user_id")
+        end
 
         sum = 0
         count = 0

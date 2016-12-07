@@ -90,11 +90,11 @@ class DrinkShow extends React.Component {
           <tbody>
             <tr>
               <th className="table-tl">
-                <p className="stat-title">TOTAL</p>
+                <p className="stat-title">TOTAL CHECKINS</p>
                 <p className="stat-number">{stats.all || 0}</p>
               </th>
               <th className="table-tr">
-                <p className="stat-title">UNIQUE</p>
+                <p className="stat-title">UNIQUE USERS</p>
                 <p className="stat-number">{stats.unique || 0}</p>
               </th>
             </tr>

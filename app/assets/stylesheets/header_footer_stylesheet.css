@@ -70,6 +70,7 @@ header {
   display: inline-flex;
   align-items: center;
   margin-right: 7px;
+  position: relative;
 }
 
 .user-button > img {
@@ -90,6 +91,7 @@ header {
   background-color: #4C2A1E;
   cursor: pointer;
   padding: 0;
+  right: 0;
 }
 
 .user-dropdown:hover {
