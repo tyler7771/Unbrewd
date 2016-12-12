@@ -5,6 +5,7 @@ const Footer = ({currentUser, logout}) => {
   return (
     <footer>
       <div className="footer-content">
+        <a href="http://tylerfields.net">Portfoio</a>
         <a href="https://github.com/tyler7771">GitHub</a>
         <a href="https://www.linkedin.com/in/tyler7771">LinkedIn</a>
         <a href="mailto:tyler.fields777@gmail.com">Contact</a>
