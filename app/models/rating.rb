@@ -4,8 +4,6 @@ class Rating < ActiveRecord::Base
   belongs_to :drink
 
   def self.index_with_params(params)
-
-
     @ratings = self.find_by_params(params)
 
     if params[:amount] && @ratings.length >= params[:amount].to_i
