@@ -6,6 +6,7 @@ class Api::RoastersController < ApplicationController
 
   def show
     @roaster = Roaster.find(params[:id])
+    render :show
   end
 
   def create
